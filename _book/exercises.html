@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Exercises | Practical 2 - Understanding correlation and further exploring relationships</title>
+  <meta name="description" content="3 Exercises | Practical 2 - Understanding correlation and further exploring relationships" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Exercises | Practical 2 - Understanding correlation and further exploring relationships" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Exercises | Practical 2 - Understanding correlation and further exploring relationships" />
+  
+  
+  
+
+<meta name="author" content="Team in Room 420 - Megan Ruffle, Naphon Olley, Jennifer James, William Ryan" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="examples.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.2</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>2</b> Examples</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="examples.html"><a href="examples.html#example-1---crime-dataset"><i class="fa fa-check"></i><b>2.1</b> Example 1 - <code>crime</code> dataset</a></li>
+<li class="chapter" data-level="2.2" data-path="examples.html"><a href="examples.html#twopointtwo"><i class="fa fa-check"></i><b>2.2</b> Example 2 - <code>phys</code> dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="examples.html"><a href="examples.html#calculating-the-correlation-by-hand"><i class="fa fa-check"></i><b>2.3</b> Calculating the correlation by hand</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>3</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exercises.html"><a href="exercises.html#exercise-1---cheese-dataset"><i class="fa fa-check"></i><b>3.1</b> Exercise 1 - <code>cheese</code> dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="exercises.html"><a href="exercises.html#exercise-2---nicholas-cage-data"><i class="fa fa-check"></i><b>3.2</b> Exercise 2 - Nicholas Cage data</a></li>
+<li class="chapter" data-level="3.3" data-path="exercises.html"><a href="exercises.html#exercise-3---context-identifying-relationships"><i class="fa fa-check"></i><b>3.3</b> Exercise 3 - Context: identifying relationships</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Practical 2 - Understanding correlation and further exploring relationships</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercises" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Exercises<a href="exercises.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr />
+<div id="exercise-1---cheese-dataset" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Exercise 1 - <code>cheese</code> dataset<a href="exercises.html#exercise-1---cheese-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: lower-alpha">
+<li>Choose the best two variables among (<strong>H2S</strong>, log(<strong>H2S</strong>), <strong>Lactic Acid</strong>, log(<strong>Lactic Acid</strong>)) to explain <strong>Taste</strong> and construct a multiple linear regression model using them.</li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>The variable that best described a linear relationship with <strong>Taste</strong> was chosen he be log(<strong>H2S</strong>) in Practical 1. To choose a second variable, we can take another look at the plots created in Practical 1.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="exercises.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taste vs lactic acid</span></span>
+<span id="cb24-2"><a href="exercises.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Taste <span class="sc">~</span> Lactic.Acid, <span class="at">data =</span> cheese, <span class="at">xlab =</span> <span class="st">&quot;Lactic acid concentration&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Taste score&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="exercises.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taste vs H2S</span></span>
+<span id="cb25-2"><a href="exercises.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Taste <span class="sc">~</span> H2S, <span class="at">data =</span> cheese, <span class="at">xlab =</span> <span class="st">&quot;H2S concentration&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Taste score&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="exercises.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taste vs lactic acid</span></span>
+<span id="cb26-2"><a href="exercises.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Taste <span class="sc">~</span> <span class="fu">log</span>(Lactic.Acid), <span class="at">data =</span> cheese, <span class="at">xlab =</span> <span class="st">&quot; Log lactic acid concentration&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Taste score&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-18-3.png" width="672" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="exercises.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taste vs H2S</span></span>
+<span id="cb27-2"><a href="exercises.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Taste <span class="sc">~</span> <span class="fu">log</span>(H2S), <span class="at">data =</span> cheese, <span class="at">xlab =</span> <span class="st">&quot;Log H2S concentration&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Taste score&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-18-4.png" width="672" /></p>
+</div>
+<p>The 2 best variables to explain <strong>Taste</strong> are log(<strong>H2S</strong>) and <select class='webex-select'><option value='blank'></option><option value=''>H2S</option><option value='answer'>Lactic Acid</option><option value=''>log(Lactic Acid)</option></select>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Estimate the coefficients using the vector-matrix formulation and check they are same as the R
+output.</li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Remember to define the design matrix and the response vector correctly.</p>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+</div>
+<p>The <code>R</code> command to create the design matrix is <select class='webex-select'><option value='blank'></option><option value=''>design</option><option value=''>design.matrix</option><option value=''>model</option><option value='answer'>model.matrix</option></select></p>
+<p>Give your answers to 2 decimal places.</p>
+<p>The intercept is roughly <input class='webex-solveme nospaces' size='7' data-answer='["-27.592"]'/>.</p>
+<p>The coefficient describing the effect of log(<strong>H2S</strong>) is roughly <input class='webex-solveme nospaces' size='5' data-answer='["3.946"]'/>.</p>
+<p>The coefficient describing the effect of <strong>Lactic Acid</strong> is roughly <input class='webex-solveme nospaces' size='6' data-answer='["19.887"]'/>.</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Interpret the estimated coefficients.</li>
+</ol>
+<p>The model tells us that for every 1 unit increase in log(<strong>H2S</strong>), the <strong>Taste</strong> score goes up by roughly <input class='webex-solveme nospaces' size='5' data-answer='["3.946"]'/>, <select class='webex-select'><option value='blank'></option><option value='answer'>when Lactic Acid remains the same</option><option value=''>regardless of changes in Lactic Acid</option></select>.</p>
+<p>Similarly, for every 1 unit increase in <strong>Lactic Acid</strong>, the <strong>Taste</strong> score goes up by roughly <input class='webex-solveme nospaces' size='6' data-answer='["19.887"]'/>, <select class='webex-select'><option value='blank'></option><option value='answer'>when log(H2S) remains the same</option><option value=''>regardless of changes in log(H2S</option></select>.</p>
+</div>
+<div id="exercise-2---nicholas-cage-data" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Exercise 2 - Nicholas Cage data<a href="exercises.html#exercise-2---nicholas-cage-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hollywood legend Nicholas Cage seems to have a problem. It appears that every time he releases
+a new film upon the world many people drown by falling into pools of water. Coincidence? Or,
+are some of his films that bad?</p>
+<p><strong>Data: Cage.csv</strong></p>
+Read in the data using:
+<center>
+<code>Cage &lt;- read.csv("Cage.csv")</code>
+</center>
+<ol style="list-style-type: lower-alpha">
+<li>Produce a scatterplot of <strong>NumDrowned</strong> (<em>y</em>) against <strong>NumFilms</strong> (<em>x</em>).</li>
+</ol>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="exercises.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(NumDrowned <span class="sc">~</span> NumFilms, <span class="at">data =</span> Cage, <span class="at">xlab =</span> <span class="st">&quot;Number of Nicholas Cage films released in a year&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Number of people who drowned falling into pools that year&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+</div>
+<p>Use the <code>cor.test</code> command to perform a correlation hypothesis test. What does this tell us about
+the relationship between <strong>NumDrowned</strong> and <strong>NumFilms</strong>?</p>
+<p>The sample correlation coefficient is <input class='webex-solveme nospaces' size='5' data-answer='["0.666",".666"]'/> <em>(to 3 decimal places)</em>.</p>
+<p>According to the hypothesis test carried out, we <select class='webex-select'><option value='blank'></option><option value=''>fail to reject the null hypothesis</option><option value='answer'>reject the null hypothesis</option></select>. This means we conclude the true correlation between the two variables is <select class='webex-select'><option value='blank'></option><option value=''>equal to 0</option><option value='answer'>not equal to zero</option></select>.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="exercises.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(Cage<span class="sc">$</span>NumDrowned, Cage<span class="sc">$</span>NumFilms)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  Cage$NumDrowned and Cage$NumFilms
+## t = 2.6785, df = 9, p-value = 0.02527
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.1101273 0.9045101
+## sample estimates:
+##       cor 
+## 0.6660043</code></pre>
+</div>
+<p>This is an example of <strong>spurious correlation</strong>, where two variables that are not related to each other in any
+way, that is, they are independent, could be inferred as being related. The number of Nicholas Cage films
+released in a year is clearly not related to the number of drowning accidents in that same year, but if we just
+take our correlation hypothesis test on face value, then we would think otherwise.</p>
+</div>
+<div id="exercise-3---context-identifying-relationships" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Exercise 3 - Context: identifying relationships<a href="exercises.html#exercise-3---context-identifying-relationships" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For the following contexts determine whether fitting a regression model would be appropriate. If a regression model is appropriate, identify which variable is the <strong>response variable</strong> and which is the <strong>explanatory variable</strong>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Is federal spending, on average, higher or lower in countries with high rates of poverty?</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>Federal spending: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select> Poverty rates: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>A study was conducted to determine whether surgery or chemotherapy results in higher survival rates
+for a certain type of cancer.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value='answer'>No</option><option value=''>Yes</option></select></p>
+<p>Type of treatment: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select> Survival rates: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>A study found that, overall, left-handed people die at a younger age than right-handed people.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value='answer'>No</option><option value=''>Yes</option></select></p>
+<p>Age of death: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select> Left- or right-handed: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Per capita cheese consumption is correlated with the number of people who died getting tangled in
+bed sheets.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>Number of people who died getting tangled in bed sheets: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select> Per capita cheese consumption: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>An experiment was conducted to test the effects of sleep deprivation on human reaction times.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>Hours of sleep: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select> Reaction times: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select></p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>A study was conducted in order to predict the GPA of university students given their high school
+GPA.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>GPA of university students: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select> High school GPA: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select></p>
+<ol start="7" style="list-style-type: lower-alpha">
+<li>A company wants to know if there is a significant relationship between its advertising expenditures
+and its sales volume.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>Sales volume: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select> Advertising expenditures: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select></p>
+<ol start="8" style="list-style-type: lower-alpha">
+<li>A sample of insured drivers with similar insurance policies were randomly selected. Interest is in
+determining whether there is a significant relationship between driving experience and insurance
+premium.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>Driving experience: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select> Insurance premium: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select></p>
+<ol style="list-style-type: lower-roman">
+<li>Ice cream sales are correlated with murder rates in the US.</li>
+</ol>
+<p>Regression model appropriate? <select class='webex-select'><option value='blank'></option><option value=''>No</option><option value='answer'>Yes</option></select></p>
+<p>Murder rates: <select class='webex-select'><option value='blank'></option><option value=''>Explanatory</option><option value='answer'>Response</option></select> Ice cream sales: <select class='webex-select'><option value='blank'></option><option value='answer'>Explanatory</option><option value=''>Response</option></select></p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="examples.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["main.pdf", "main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

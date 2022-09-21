@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Part 2 - Analyzing Data | S1Y Lab 1</title>
+  <meta name="description" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-started-using-rstudio.html"/>
+<link rel="next" href="visualizing-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Part 1: Intro to R and RStudio <img src="images/R-Logo1.png" style="width:10.0%" alt="The R logo" /> <img src="images/RStudio.jpg" style="width:10.0%" alt="The RStudio logo" /></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ilo-intro"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-r-rstudio"><i class="fa fa-check"></i><b>1.2</b> R and RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.4</b> Credit where credit is due</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html"><i class="fa fa-check"></i><b>2</b> Getting started using RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#packages"><i class="fa fa-check"></i><b>2.1</b> Packages and functions</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#install-package"><i class="fa fa-check"></i><b>2.1.1</b> Installing a package</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#loading-a-package"><i class="fa fa-check"></i><b>2.1.2</b> Loading a package</a></li>
+<li class="chapter" data-level="2.1.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#using-a-function"><i class="fa fa-check"></i><b>2.1.3</b> Using a function</a></li>
+<li class="chapter" data-level="2.1.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tidyverse"><i class="fa fa-check"></i><b>2.1.4</b> Tidyverse</a></li>
+<li class="chapter" data-level="2.1.5" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#function-help"><i class="fa fa-check"></i><b>2.1.5</b> Function Help</a></li>
+<li class="chapter" data-level="2.1.6" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#arguments"><i class="fa fa-check"></i><b>2.1.6</b> Arguments</a></li>
+<li class="chapter" data-level="2.1.7" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#argument-names"><i class="fa fa-check"></i><b>2.1.7</b> Argument names</a></li>
+<li class="chapter" data-level="2.1.8" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tab-auto-complete"><i class="fa fa-check"></i><b>2.1.8</b> Tab auto-complete</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#objects-and-the-assign---operator"><i class="fa fa-check"></i><b>2.2</b> Objects and the assign (<code>&lt;-</code>) operator</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#the-operator"><i class="fa fa-check"></i><b>2.2.1</b> The $ operator</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#code-comments"><i class="fa fa-check"></i><b>2.2.2</b> Code comments</a></li>
+<li class="chapter" data-level="2.2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#pipes"><i class="fa fa-check"></i><b>2.2.3</b> Pipes (<code>%&gt;%</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#help"><i class="fa fa-check"></i><b>2.3</b> Getting help</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#package-reference-manuals"><i class="fa fa-check"></i><b>2.3.1</b> Package reference manuals</a></li>
+<li class="chapter" data-level="2.3.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#googling"><i class="fa fa-check"></i><b>2.3.2</b> Googling</a></li>
+<li class="chapter" data-level="2.3.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#vignettes"><i class="fa fa-check"></i><b>2.3.3</b> Vignettes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#resources-intro"><i class="fa fa-check"></i><b>2.4</b> Further Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html"><i class="fa fa-check"></i><b>3</b> Part 2 - Analyzing Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#ilo-part2"><i class="fa fa-check"></i><b>3.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="3.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#dealing-with-data-great-british-bake-off-gbbo"><i class="fa fa-check"></i><b>3.2</b> Dealing with Data: Great British Bake Off (GBBO)</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#reading-data-in"><i class="fa fa-check"></i><b>3.2.1</b> Reading data in</a></li>
+<li class="chapter" data-level="3.2.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#looking-at-data"><i class="fa fa-check"></i><b>3.2.2</b> Looking at data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#exploring-data"><i class="fa fa-check"></i><b>3.2.3</b> Exploring data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#dplyr-functions-for-data-wrangling"><i class="fa fa-check"></i><b>3.3</b> <code>dplyr</code> functions for data wrangling</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-a-new-variable-and-adding-it-to-a-data-object"><i class="fa fa-check"></i><b>3.3.1</b> Creating a new variable and adding it to a data object</a></li>
+<li class="chapter" data-level="3.3.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-summaries-of-data"><i class="fa fa-check"></i><b>3.3.2</b> Creating summaries of data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>4</b> Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#building-plots"><i class="fa fa-check"></i><b>4.1</b> Building plots</a></li>
+<li class="chapter" data-level="4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#counting-categories"><i class="fa fa-check"></i><b>4.2</b> Counting categories</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="visualizing-data.html"><a href="visualizing-data.html#bar-plot"><i class="fa fa-check"></i><b>4.2.1</b> Bar plot</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visualizing-data.html"><a href="visualizing-data.html#column-plot"><i class="fa fa-check"></i><b>4.2.2</b> Column plot</a></li>
+<li class="chapter" data-level="4.2.3" data-path="visualizing-data.html"><a href="visualizing-data.html#pie-chart"><i class="fa fa-check"></i><b>4.2.3</b> Pie chart</a></li>
+<li class="chapter" data-level="4.2.4" data-path="visualizing-data.html"><a href="visualizing-data.html#test-your-understanding"><i class="fa fa-check"></i><b>4.2.4</b> <strong>Test your understanding</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#one-continuous-variable"><i class="fa fa-check"></i><b>4.3</b> One continuous variable</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="visualizing-data.html"><a href="visualizing-data.html#histogram"><i class="fa fa-check"></i><b>4.3.1</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="visualizing-data.html"><a href="visualizing-data.html#grouped-continuous-variables"><i class="fa fa-check"></i><b>4.4</b> Grouped continuous variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#subdividing-distributions"><i class="fa fa-check"></i><b>4.4.1</b> Subdividing distributions</a></li>
+<li class="chapter" data-level="4.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#violin-plot"><i class="fa fa-check"></i><b>4.4.2</b> Violin plot</a></li>
+<li class="chapter" data-level="4.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#boxplot"><i class="fa fa-check"></i><b>4.4.3</b> Boxplot</a></li>
+<li class="chapter" data-level="4.4.4" data-path="visualizing-data.html"><a href="visualizing-data.html#test-your-understanding-1"><i class="fa fa-check"></i><b>4.4.4</b> Test your understanding</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="visualizing-data.html"><a href="visualizing-data.html#two-continuous-variables"><i class="fa fa-check"></i><b>4.5</b> Two continuous variables</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="visualizing-data.html"><a href="visualizing-data.html#scatterplot"><i class="fa fa-check"></i><b>4.5.1</b> Scatterplot</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="visualizing-data.html"><a href="visualizing-data.html#two-continuous-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>4.6</b> Two continuous variables and a categorical variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="group-tasks.html"><a href="group-tasks.html"><i class="fa fa-check"></i><b>5</b> Group Tasks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="group-tasks.html"><a href="group-tasks.html#bfrss-survey-questions"><i class="fa fa-check"></i><b>5.1</b> BFRSS Survey Questions</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S1Y Lab 1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="part-2---analyzing-data" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Part 2 - Analyzing Data<a href="part-2---analyzing-data.html#part-2---analyzing-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr />
+<div id="ilo-part2" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Intended Learning Outcomes<a href="part-2---analyzing-data.html#ilo-part2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Be introduced to key <code>dplyr</code> functions for data wrangling (part of the <code>tidyverse</code>)</li>
+<li>Be able to create numerical summaries of data</li>
+<li>Be able to create graphical summaries of data</li>
+<li>Be able to create objects by writing and running code in the console</li>
+</ul>
+<!-- You can use this counter to see how many of the quiz questions you've got right: <h3 style='color:#003366;' id="webex-total_correct"></h3>
+
+ -->
+</div>
+<div id="dealing-with-data-great-british-bake-off-gbbo" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Dealing with Data: Great British Bake Off (GBBO)<a href="part-2---analyzing-data.html#dealing-with-data-great-british-bake-off-gbbo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/GBBO_1.png" width="50%" /></p>
+<p>The data set we will be looking at in this section refers to TV competition <a href="https://en.wikipedia.org/wiki/The_Great_British_Bake_Off">"Great British Bake Off"</a> (often abbreviated to "Bake Off" or "GBBO"). Within each series, a group of amateur bakers compete against each other in a series of episodes, attempting to impress a group of judges with their baking skills. One contestant is eliminated in each episode, and the winner is selected from the contestants who reach the final. The first episode was aired on 17 August 2010, with its first four series broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.</p>
+<div id="reading-data-in" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Reading data in<a href="part-2---analyzing-data.html#reading-data-in" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The file <code>ratings_seasons.csv</code> contains data on the first 10 series (2010-2019). Open a script in RStudio (perhaps call it <code>S1Y_Lab_1.R</code>) and paste and run this code to read the data into RStudio</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-2---analyzing-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ratings_seasons.csv&#39;</span>)</span></code></pre></div>
+</div>
+<div id="looking-at-data" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Looking at data<a href="part-2---analyzing-data.html#looking-at-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that you've loaded some data, look the upper right hand window of RStudio, under the <code>Environment</code> tab. You will see the object <code>ratings</code> listed, along with the number of observations (rows) and variables (columns). This is your first check that you've read in the data correctly.</p>
+<p>Always look at your data once you've created or loaded it. Also look at it after each step that transforms your data. There are two main ways to look at your data: <code>View()</code> and <code>str()</code>.</p>
+<p><strong><code>View()</code></strong></p>
+<p>An intuitive way to look at the data is by using <code>View()</code> (uppercase 'V'), which opens up a data table in the console pane using a viewer that looks a bit like an Excel spreadsheet. This command can be useful in the console, but don't ever put this one in a script because it will create an annoying pop-up window when the user runs it. You can also click on an object in the <code>Environment</code> pane to open it in the same interface. You can close the tab when you're done looking at it; it won't remove the object containing the data.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="part-2---analyzing-data.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(ratings)</span></code></pre></div>
+<!-- **`print()`** -->
+<!-- The `print()` function can be run explicitly, but is more commonly called by just typing the variable name on a blank line. The default is not to print all of the data, but just the first 10 rows. -->
+<!-- Let's look at the `ratings` data that we loaded above. Depending on how wide your screen is, you might need to click on an arrow at the right of the table to see the last column. -->
+<!-- ```{r print1, eval = FALSE} -->
+<!-- # call print explicitly -->
+<!-- print(ratings) -->
+<!-- # more common method of just calling object name -->
+<!-- ratings -->
+<!-- ``` -->
+<!-- ```{r print2, echo=FALSE} -->
+<!-- ratings -->
+<!-- ``` -->
+<p><strong><code>str()</code></strong></p>
+<p>The funciton <code>str()</code> (short for "structure") shows the number of observations and variables and the datatype of those variables, e.g. "num" for an number, "chr" for a character string (and a lot more information that we don't need to know about!)</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="part-2---analyzing-data.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings, <span class="at">give.attr=</span><span class="cn">FALSE</span>)  <span class="co">#The argument give.attr=FALSE surpresses extra info  </span></span></code></pre></div>
+<pre><code>## spec_tbl_df [94 x 11] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ series              : num [1:94] 1 1 1 1 1 1 2 2 2 2 ...
+##  $ episode             : num [1:94] 1 2 3 4 5 6 1 2 3 4 ...
+##  $ uk_airdate          : Date[1:94], format: &quot;2010-08-17&quot; &quot;2010-08-24&quot; ...
+##  $ viewers_7day        : num [1:94] 2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
+##  $ viewers_28day       : num [1:94] 7 3 2 4 1 1 2 2 1 1 ...
+##  $ network_rank        : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ channels_rank       : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ bbc_iplayer_requests: num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ episode_count       : num [1:94] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ us_season           : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ us_airdate          : chr [1:94] NA NA NA NA ...</code></pre>
+<div class="webex-solution">
+<button>
+Optional: other ways of looking at data
+</button>
+<p>It is always necessary to look at the data you are working with to get a good sense of what it contains, i.e. the different types of data contained in the data set and how much data you have.</p>
+<p>We used the <code>str()</code> function above to get information on the number of variables and observations and to list the variables together with the first few values they take.</p>
+<p>Alternatively we could use these functions:</p>
+<ul>
+<li><code>head()</code>: shows the first 6 lines of the first few variables</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="part-2---analyzing-data.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 11
+##   series episode uk_airdate viewers_7day viewe~1 netwo~2 chann~3 bbc_i~4 episo~5
+##    &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1      1       1 2010-08-17         2.24       7      NA      NA      NA       1
+## 2      1       2 2010-08-24         3          3      NA      NA      NA       2
+## 3      1       3 2010-08-31         3          2      NA      NA      NA       3
+## 4      1       4 2010-09-07         2.6        4      NA      NA      NA       4
+## 5      1       5 2010-09-14         3.03       1      NA      NA      NA       5
+## 6      1       6 2010-09-21         2.75       1      NA      NA      NA       6
+## # ... with 2 more variables: us_season &lt;dbl&gt;, us_airdate &lt;chr&gt;, and abbreviated
+## #   variable names 1: viewers_28day, 2: network_rank, 3: channels_rank,
+## #   4: bbc_iplayer_requests, 5: episode_count
+## # i Use `colnames()` to see all variable names</code></pre>
+<ul>
+<li><code>glimpse()</code>: gives a sideways version of the data. This is useful if the data is very wide (i.e. has lots of variables) and you can't easily see all of the columns/variables. It also tells you the data type of each column/variable in angled brackets after each column/variable name.</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="part-2---analyzing-data.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ratings)</span></code></pre></div>
+<pre><code>## Rows: 94
+## Columns: 11
+## $ series               &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3~
+## $ episode              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3~
+## $ uk_airdate           &lt;date&gt; 2010-08-17, 2010-08-24, 2010-08-31, 2010-09-07, ~
+## $ viewers_7day         &lt;dbl&gt; 2.24, 3.00, 3.00, 2.60, 3.03, 2.75, 3.10, 3.53, 3~
+## $ viewers_28day        &lt;dbl&gt; 7, 3, 2, 4, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1~
+## $ network_rank         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ channels_rank        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ bbc_iplayer_requests &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ episode_count        &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15~
+## $ us_season            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ us_airdate           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~</code></pre>
+</div>
+<p>By using any of the methods described above, answer these questions:</p>
+<ul>
+<li><strong>How many variables does the data <code>ratings</code> contain? <input class='webex-solveme nospaces' size='2' data-answer='["11"]'/></strong></li>
+<li><strong>How many observations does <code>ratings</code> contain? <input class='webex-solveme nospaces' size='2' data-answer='["94"]'/></strong></li>
+</ul>
+<p>In this lab we are interested in the ratings of each episode in the 7 day period after its broadcast.</p>
+<p><strong>What variable contains this information?</strong></p>
+<div id="radio_SINWWUNQDM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>ratings</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>series</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>episode</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value="answer"></input> <span>viewers_7day</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>viewers_28day</span></label>
+</div>
+</div>
+<div id="exploring-data" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Exploring data<a href="part-2---analyzing-data.html#exploring-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The variables we will analyse in this lab are:</p>
+<ul>
+<li><p><code>series</code>: the series number, ranging from 1 to 10 corresponding to 2010-2019.</p></li>
+<li><p><code>episode</code>: the episode number, randing from 1 to 10 (although not all series had 10 episodes!)</p></li>
+<li><p><code>viewers_7day</code> the ratings of each episode in the 7 day period after its broadcast (measured as millions of viewers)</p></li>
+</ul>
+<!-- If we are just interested in one variable in our data, i.e. in a *single column* of a data frame, we type first the name of the data frame, followed by a \$ symbol, followed by the name of the variable. For example, if we wanted just the  -->
+<ul>
+<li><strong>Run this code to just see the <code>viewers_7day</code> values in the <code>ratings</code> data:</strong></li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="part-2---analyzing-data.html#cb27-1" aria-hidden="true" tabindex="-1"></a>ratings<span class="sc">$</span>viewers_7day</span></code></pre></div>
+<pre><code>##  [1]  2.240  3.000  3.000  2.600  3.030  2.750  3.100  3.530  3.820  3.600
+## [11]  3.830  4.250  4.420  5.060  3.850  4.600  4.530  4.710  4.610  4.820
+## [21]  5.100  5.350  5.700  6.740  6.600  6.650  7.170  6.820  6.950  7.320
+## [31]  7.760  7.410  7.410  9.450  8.510  8.790  9.280 10.250  9.950 10.130
+## [41] 10.280  9.023 10.670 13.510 11.620 11.590 12.010 12.360 12.390 12.000
+## [51] 12.350 11.090 12.650 15.050 13.580 13.450 13.010 13.290 13.120 13.130
+## [61] 13.450 13.260 13.440 15.900  9.460  9.230  8.680  8.550  8.610  8.610
+## [71]  9.010  8.950  9.030 10.040  9.550  9.310  8.910  8.880  8.670  8.910
+## [81]  9.220  9.690  9.500 10.340  9.620  9.380  8.940  8.960  9.260  8.700
+## [91]  8.980  9.190  9.340 10.050</code></pre>
+<p><strong>What do the numbers in square brackets represent in the output to <code>ratings$viewers_7day</code>?</strong></p>
+<div id="radio_FFFCPETISO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FFFCPETISO" value=""></input> <span>They are part of the data set, i.e. more values of ratings.</span></label><label><input type="radio" autocomplete="off" name="radio_FFFCPETISO" value=""></input> <span>They don't really have any important meaning.</span></label><label><input type="radio" autocomplete="off" name="radio_FFFCPETISO" value=""></input> <span>They represent the time taken to run the code in miliseconds.</span></label><label><input type="radio" autocomplete="off" name="radio_FFFCPETISO" value="answer"></input> <span>They represent the position of the ratings in the output. i.e. [1] preceeds the first ratings value, [21] preceeds the 21st ratings value.</span></label>
+</div>
+<p> 
+ 
+ </p>
+</div>
+</div>
+<div id="dplyr-functions-for-data-wrangling" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> <code>dplyr</code> functions for data wrangling<a href="part-2---analyzing-data.html#dplyr-functions-for-data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/dplyr_sum_mut_sel_fil.jpg" width="50%" /></p>
+<p>We're now going to use some key functions in the <code>dplyr</code> package (part of the <code>tidyverse</code>) to "wrangle" data</p>
+<div id="creating-a-new-variable-and-adding-it-to-a-data-object" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Creating a new variable and adding it to a data object<a href="part-2---analyzing-data.html#creating-a-new-variable-and-adding-it-to-a-data-object" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Not all the information we need is necessarily included in the data. For example, in the introduction to the GBBO data we were told the "first four series [were] broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.". We can add this information to the <code>ratings</code> data as another variable/column in the <code>ratings</code> data.</p>
+<ul>
+<li><strong>Run this code to create a new variable <code>channel</code> in the <code>ratings</code> data and to check that it as we intended:</strong></li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-2---analyzing-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ratings, <span class="at">channel =</span> <span class="fu">case_when</span>(series <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">&quot;BBC2&quot;</span>,</span>
+<span id="cb29-2"><a href="part-2---analyzing-data.html#cb29-2" aria-hidden="true" tabindex="-1"></a>                                                series <span class="sc">&gt;</span> <span class="dv">4</span> <span class="sc">&amp;</span> series <span class="sc">&lt;</span><span class="dv">8</span> <span class="sc">~</span> <span class="st">&quot;BBC1&quot;</span>,</span>
+<span id="cb29-3"><a href="part-2---analyzing-data.html#cb29-3" aria-hidden="true" tabindex="-1"></a>                                                series <span class="sc">&gt;</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;C4&quot;</span>))</span>
+<span id="cb29-4"><a href="part-2---analyzing-data.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="part-2---analyzing-data.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">select</span>(ratings, series, channel), <span class="at">n=</span><span class="fu">nrow</span>(ratings))</span></code></pre></div>
+<p>Before we proceed to creating summarisies of variables we need to pause and think about two types of variables: <strong>numeric</strong> and <strong>categorical</strong>.</p>
+<ul>
+<li>**Run this code again to see the variables (including the one we've just added) in <code>ratings</code></li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="part-2---analyzing-data.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings)</span></code></pre></div>
+<pre><code>## tibble [94 x 12] (S3: tbl_df/tbl/data.frame)
+##  $ series              : num [1:94] 1 1 1 1 1 1 2 2 2 2 ...
+##  $ episode             : num [1:94] 1 2 3 4 5 6 1 2 3 4 ...
+##  $ uk_airdate          : Date[1:94], format: &quot;2010-08-17&quot; &quot;2010-08-24&quot; ...
+##  $ viewers_7day        : num [1:94] 2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
+##  $ viewers_28day       : num [1:94] 7 3 2 4 1 1 2 2 1 1 ...
+##  $ network_rank        : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ channels_rank       : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ bbc_iplayer_requests: num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ episode_count       : num [1:94] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ us_season           : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ us_airdate          : chr [1:94] NA NA NA NA ...
+##  $ channel             : chr [1:94] &quot;BBC2&quot; &quot;BBC2&quot; &quot;BBC2&quot; &quot;BBC2&quot; ...</code></pre>
+<p>The values just after the ":" tells us the type of each variable</p>
+<ul>
+<li><code>num</code> stands for <strong>numeric</strong> variable</li>
+<li><code>Date</code> stands for a type of variable that can handle calendar dates</li>
+<li><code>chr</code> stands for 'character' which usually represents a <strong>categorical</strong> variable</li>
+</ul>
+<p>Because numbers (e.g. the values that <code>series</code> takes, i.e. 1, 2, 3, ...) can also represent 'categories' or 'levels' of a categorical variable, R doesn't assume that just because a variable is of type <code>chr</code> that it is categorical. To specify a <strong>categorical</strong> variable in R we use the <code>as.factor()</code> function, since R calls categorical variables "factors". In the <code>ratings</code> data at least the three variable <code>series</code>, <code>episode</code> and <code>channel</code> are categorical variables but they aren't stored as such, yet!</p>
+<p>To tell R that variables are factors (i.e. categorical) use <code>mutate()</code> to overriding the original variable with the same data but classified as a factor.</p>
+<ul>
+<li><strong>Copy and run this code to change the <code>series</code>, <code>episode</code> and <code>channel</code> variables to factors.</strong></li>
+</ul>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="part-2---analyzing-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="part-2---analyzing-data.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series =</span> <span class="fu">as.factor</span>(series),</span>
+<span id="cb32-3"><a href="part-2---analyzing-data.html#cb32-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">episode =</span> <span class="fu">as.factor</span>(episode),</span>
+<span id="cb32-4"><a href="part-2---analyzing-data.html#cb32-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">channel =</span> <span class="fu">as.factor</span>(channel))</span>
+<span id="cb32-5"><a href="part-2---analyzing-data.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings)</span></code></pre></div>
+<pre><code>## tibble [94 x 12] (S3: tbl_df/tbl/data.frame)
+##  $ series              : Factor w/ 10 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 1 1 2 2 2 2 ...
+##  $ episode             : Factor w/ 10 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 2 3 4 5 6 1 2 3 4 ...
+##  $ uk_airdate          : Date[1:94], format: &quot;2010-08-17&quot; &quot;2010-08-24&quot; ...
+##  $ viewers_7day        : num [1:94] 2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
+##  $ viewers_28day       : num [1:94] 7 3 2 4 1 1 2 2 1 1 ...
+##  $ network_rank        : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ channels_rank       : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ bbc_iplayer_requests: num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ episode_count       : num [1:94] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ us_season           : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
+##  $ us_airdate          : chr [1:94] NA NA NA NA ...
+##  $ channel             : Factor w/ 3 levels &quot;BBC1&quot;,&quot;BBC2&quot;,..: 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
+<p>You can read this code as, for example, "overwrite the data that is in the column series with series as a factor, thus converting it to a categorical variable".</p>
+<p><strong>Remember this. It's a really important step and if graphs are looking weird this might be the reason.</strong></p>
+</div>
+<div id="creating-summaries-of-data" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Creating summaries of data<a href="part-2---analyzing-data.html#creating-summaries-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="numerical-data" class="section level4 hasAnchor" number="3.3.2.1">
+<h4><span class="header-section-number">3.3.2.1</span> Numerical Data<a href="part-2---analyzing-data.html#numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>summarise()</code> function from the <code>dplyr</code> package is loaded as part of the <code>tidyverse</code> and creates summary statistics. It creates a new object with columns that summarise the data from a larger table using summary functions. Check this <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Cheat Sheet</a> for various summary functions. Some common ones are: <code>n()</code>, <code>min()</code>, <code>max()</code>, <code>mean()</code>, <code>sd()</code> and <code>quantile()</code>.</p>
+<p>Here is an example using <code>summarise()</code></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="part-2---analyzing-data.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(ratings,</span>
+<span id="cb34-2"><a href="part-2---analyzing-data.html#cb34-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb34-3"><a href="part-2---analyzing-data.html#cb34-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_ratings =</span> <span class="fu">sd</span>(viewers_7day),</span>
+<span id="cb34-4"><a href="part-2---analyzing-data.html#cb34-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb34-5"><a href="part-2---analyzing-data.html#cb34-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 4
+##   mean_ratings sd_ratings min_ratings max_ratings
+##          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1         8.58       3.27        2.24        15.9</code></pre>
+<ul>
+<li>The first argument that <code>summarise()</code> takes is the data object to summarise</li>
+<li><code>summarise()</code> creates a new object. The column names of this new object are on the left hand-side of <code>=</code>, i.e., <code>mean_ratings</code>, <code>sd_ratings</code>, <code>min_ratings</code> and <code>max_ratings</code>.</li>
+<li>The values of these columns are the result of the summary operation on the right hand-side of <code>=</code>.</li>
+</ul>
+<p><strong>What is the average number of viewers that GBBO had in the 7 days after broadcast?</strong></p>
+<div id="radio_VTXNNQVYHP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VTXNNQVYHP" value=""></input> <span>3270000</span></label><label><input type="radio" autocomplete="off" name="radio_VTXNNQVYHP" value=""></input> <span>2240000</span></label><label><input type="radio" autocomplete="off" name="radio_VTXNNQVYHP" value="answer"></input> <span>8580000</span></label><label><input type="radio" autocomplete="off" name="radio_VTXNNQVYHP" value=""></input> <span>15900000</span></label>
+</div>
+<ul>
+<li><p><strong>What is the least number of viewers that GBBO had in the 7 days after broadcast:</strong> <input class='webex-solveme nospaces' size='7' data-answer='["2240000"]'/></p></li>
+<li><p><strong>What is the most viewers that GBBO had in the 7 days after broadcast:</strong> <input class='webex-solveme nospaces' size='8' data-answer='["15900000"]'/></p></li>
+</ul>
+<!-- ```{r} -->
+<!-- summary(ratings) -->
+<!-- ``` -->
+</div>
+<div id="categorical-data" class="section level4 hasAnchor" number="3.3.2.2">
+<h4><span class="header-section-number">3.3.2.2</span> Categorical Data<a href="part-2---analyzing-data.html#categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>All of the summaries considered above are relevant for numercial/continuous variables but there also categorical variables in the ratings data.</p>
+<p><strong>Identify the type of each of the variables in the <code>ratings</code> data:</strong></p>
+<ul>
+<li><code>series</code>: <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value=''>continuous</option><option value=''>nominal</option><option value='answer'>ordinal</option></select></li>
+<li><code>episode</code>: <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value=''>continuous</option><option value=''>nominal</option><option value='answer'>ordinal</option></select></li>
+<li><code>viewers_7day</code> <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value='answer'>continuous</option><option value=''>nominal</option><option value=''>ordinal</option></select></li>
+<li><code>channel</code> <select class='webex-select'><option value='blank'></option><option value=''>discrete</option><option value=''>continuous</option><option value='answer'>nominal</option><option value=''>ordinal</option></select></li>
+</ul>
+<p>The <code>count()</code> function counts the number of rows that are the same. This will give you a new table with each combination of the counted rows and a column called <code>n</code> containing the number of observations from that group.</p>
+<ul>
+<li><p>The first argument that <code>count()</code> takes is the data object to summarise</p></li>
+<li><p>The next arguments that <code>count()</code> takes are the variables to summarise</p></li>
+<li><p>The argument <code>sort = TRUE</code> will sort the table by <code>n</code> in descending order.</p></li>
+<li><p><strong>Run this code and answer the following question:</strong></p></li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="part-2---analyzing-data.html#cb36-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ratings, channel, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<ul>
+<li><p><strong>Which channel screened the most episodes of GBBO from 2010 to 2019?</strong> <select class='webex-select'><option value='blank'></option><option value=''>BBC1</option><option value='answer'>BBC2</option><option value=''>Channel 4</option><option value=''>No single channel</option></select></p></li>
+<li><p><strong>Run this code and answer the following questions:</strong></p></li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="part-2---analyzing-data.html#cb37-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ratings, channel, series)</span></code></pre></div>
+<ul>
+<li><strong>What is this summary revealing?</strong></li>
+</ul>
+<div id="radio_FFBGFMKINK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FFBGFMKINK" value="answer"></input> <span>The number of episodes within each series (together with what channel broadcast that series)</span></label><label><input type="radio" autocomplete="off" name="radio_FFBGFMKINK" value=""></input> <span>The number of series within each episode (together with what channel broadcast that series)</span></label><label><input type="radio" autocomplete="off" name="radio_FFBGFMKINK" value=""></input> <span>The number of series within each episode</span></label><label><input type="radio" autocomplete="off" name="radio_FFBGFMKINK" value=""></input> <span>The number of episodes within each series</span></label>
+</div>
+<ul>
+<li><strong>How could the order of the columns in the summary table be changed?</strong></li>
+</ul>
+<div id="radio_DOZSQFCATB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DOZSQFCATB" value=""></input> <span>The order can't be changed</span></label><label><input type="radio" autocomplete="off" name="radio_DOZSQFCATB" value=""></input> <span>count(ratings, series, episode)</span></label><label><input type="radio" autocomplete="off" name="radio_DOZSQFCATB" value=""></input> <span>count(ratings, episode, channel)</span></label><label><input type="radio" autocomplete="off" name="radio_DOZSQFCATB" value="answer"></input> <span>count(ratings, series, channel)</span></label>
+</div>
+</div>
+<div id="summarising-numerical-and-categorical-data-simultaneously" class="section level4 hasAnchor" number="3.3.2.3">
+<h4><span class="header-section-number">3.3.2.3</span> Summarising Numerical and Categorical Data Simultaneously<a href="part-2---analyzing-data.html#summarising-numerical-and-categorical-data-simultaneously" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Its seldom that we are interested in just one variable at a time. An example of this is when we want numerical summaries but for each category/group of a categorical variable. The combination of the <code>group_by()</code> and <code>summarise()</code> functions is incredibly powerful for this task (and it is also a good demonstration of why pipes (<code>%&gt;%</code>) are so useful!).</p>
+<p>The function <code>group_by()</code> takes an existing data object and converts it into a grouped object, where any operations that are performed on it are done "by group".</p>
+<p>Consider this code (you are welcome to run it):</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="part-2---analyzing-data.html#cb38-1" aria-hidden="true" tabindex="-1"></a>ratings_grouped <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="part-2---analyzing-data.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel)</span>
+<span id="cb38-3"><a href="part-2---analyzing-data.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="part-2---analyzing-data.html#cb38-4" aria-hidden="true" tabindex="-1"></a>ch_ratings <span class="ot">&lt;-</span> ratings_grouped <span class="sc">%&gt;%</span></span>
+<span id="cb38-5"><a href="part-2---analyzing-data.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb38-6"><a href="part-2---analyzing-data.html#cb38-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb38-7"><a href="part-2---analyzing-data.html#cb38-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb38-8"><a href="part-2---analyzing-data.html#cb38-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb38-9"><a href="part-2---analyzing-data.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb38-10"><a href="part-2---analyzing-data.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="part-2---analyzing-data.html#cb38-11" aria-hidden="true" tabindex="-1"></a>ch_ratings</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 5
+##   channel count mean_ratings min_ratings max_ratings
+##   &lt;fct&gt;   &lt;int&gt;        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 BBC1       30        12.0         8.51       15.9 
+## 2 BBC2       34         5.05        2.24        9.45
+## 3 C4         30         9.19        8.55       10.3</code></pre>
+<div class="webex-solution">
+<button>
+Optional Extra Info on ungroup()...
+</button>
+<p>Make sure you call the <code>ungroup()</code> function when you are done with grouped functions. Failing to do this can cause all sorts of mysterious problems if you use that data object later assuming it isn't grouped.</p>
+</div>
+<ul>
+<li>The first line of code below creates an object named <code>ratings_grouped</code>, that groups the data according to what <code>channel</code> the episode was broadcast on.</li>
+<li>On the surface, <code>ratings_grouped</code> doesn't look any different to the original <code>ratings</code> data.</li>
+<li>However, the underlying structure has changed and so when we run <code>summarise()</code>, we now get our requested summaries for each group (in this case for each channel).</li>
+</ul>
+<p>Whilst the above code is functional, it adds an unnecessary object to the environment - <code>ratings_grouped</code> is taking up space and increases the risk we'll use this grouped object by mistake. A better way to do this is to use the pipe (<code>&gt;%&gt;</code>.</p>
+<p>Rather than creating an intermediate object, we can use the pipe to string our code together.</p>
+<ul>
+<li><strong>Run this code and check that the object produced is identical to <code>ch_ratings</code> shown above.</strong></li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="part-2---analyzing-data.html#cb40-1" aria-hidden="true" tabindex="-1"></a>ch_ratings <span class="ot">&lt;-</span> </span>
+<span id="cb40-2"><a href="part-2---analyzing-data.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  ratings <span class="sc">%&gt;%</span>             <span class="co"># Start with the original dataset; and then</span></span>
+<span id="cb40-3"><a href="part-2---analyzing-data.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel) <span class="sc">%&gt;%</span>   <span class="co"># group it; and then</span></span>
+<span id="cb40-4"><a href="part-2---analyzing-data.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),  <span class="co"># summarise it by those groups</span></span>
+<span id="cb40-5"><a href="part-2---analyzing-data.html#cb40-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb40-6"><a href="part-2---analyzing-data.html#cb40-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb40-7"><a href="part-2---analyzing-data.html#cb40-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb40-8"><a href="part-2---analyzing-data.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<p><strong>What would you change to calculate the mean ratings by series instead of by channel?</strong></p>
+<div id="radio_DXIXGUHICN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value="answer"></input> <span>group_by(series)</span></label><label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value=""></input> <span>summarise(series)</span></label><label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value=""></input> <span>count(series)</span></label><label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value=""></input> <span>mean(series)</span></label>
+</div>
+<p>You can add multiple variables to group_by() to further break down your data. For example, the below gives us the average ratings broken down by channel and series.</p>
+<ul>
+<li><strong>Reverse the order of <code>channel</code> and <code>series</code> in <code>group_by()</code> to see how it changes the output.</strong></li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="part-2---analyzing-data.html#cb41-1" aria-hidden="true" tabindex="-1"></a>ch_series_ratings <span class="ot">&lt;-</span> </span>
+<span id="cb41-2"><a href="part-2---analyzing-data.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  ratings <span class="sc">%&gt;%</span>             </span>
+<span id="cb41-3"><a href="part-2---analyzing-data.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel, series) <span class="sc">%&gt;%</span>   </span>
+<span id="cb41-4"><a href="part-2---analyzing-data.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb41-5"><a href="part-2---analyzing-data.html#cb41-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb41-6"><a href="part-2---analyzing-data.html#cb41-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb41-7"><a href="part-2---analyzing-data.html#cb41-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb41-8"><a href="part-2---analyzing-data.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb41-9"><a href="part-2---analyzing-data.html#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="part-2---analyzing-data.html#cb41-10" aria-hidden="true" tabindex="-1"></a>ch_series_ratings</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 6
+##    channel series count mean_ratings min_ratings max_ratings
+##    &lt;fct&gt;   &lt;fct&gt;  &lt;int&gt;        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+##  1 BBC1    5         10        10.0         8.51       13.5 
+##  2 BBC1    6         10        12.3        11.1        15.0 
+##  3 BBC1    7         10        13.6        13.0        15.9 
+##  4 BBC2    1          6         2.77        2.24        3.03
+##  5 BBC2    2          8         3.95        3.1         5.06
+##  6 BBC2    3         10         5.00        3.85        6.74
+##  7 BBC2    4         10         7.35        6.6         9.45
+##  8 C4      8         10         9.02        8.55       10.0 
+##  9 C4      9         10         9.30        8.67       10.3 
+## 10 C4      10        10         9.24        8.7        10.0</code></pre>
+<ul>
+<li><strong>Which code lists the summaries in chronological order?</strong> <select class='webex-select'><option value='blank'></option><option value=''>group_by(channel, series)</option><option value='answer'>group_by(series, channel)</option><option value=''>Neither of these</option></select></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-started-using-rstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizing-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["main.pdf", "main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

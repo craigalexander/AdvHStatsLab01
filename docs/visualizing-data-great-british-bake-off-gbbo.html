@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Visualizing Data: Great British Bake Off (GBBO) | S1Y Lab 1</title>
+  <meta name="description" content="4 Visualizing Data: Great British Bake Off (GBBO) | S1Y Lab 1" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Visualizing Data: Great British Bake Off (GBBO) | S1Y Lab 1" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Visualizing Data: Great British Bake Off (GBBO) | S1Y Lab 1" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="part-2---analyzing-data.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Part 1: Intro to R and RStudio <img src="images/R-Logo1.png" style="width:10.0%" alt="The R logo" /> <img src="images/RStudio.jpg" style="width:10.0%" alt="The RStudio logo" /></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ilo-intro"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-r-rstudio"><i class="fa fa-check"></i><b>1.2</b> R and RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.4</b> Credit where credit is due</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html"><i class="fa fa-check"></i><b>2</b> Getting started using RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#packages"><i class="fa fa-check"></i><b>2.1</b> Packages and functions</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#install-package"><i class="fa fa-check"></i><b>2.1.1</b> Installing a package</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#loading-a-package"><i class="fa fa-check"></i><b>2.1.2</b> Loading a package</a></li>
+<li class="chapter" data-level="2.1.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#using-a-function"><i class="fa fa-check"></i><b>2.1.3</b> Using a function</a></li>
+<li class="chapter" data-level="2.1.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tidyverse"><i class="fa fa-check"></i><b>2.1.4</b> Tidyverse</a></li>
+<li class="chapter" data-level="2.1.5" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#function-help"><i class="fa fa-check"></i><b>2.1.5</b> Function Help</a></li>
+<li class="chapter" data-level="2.1.6" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#arguments"><i class="fa fa-check"></i><b>2.1.6</b> Arguments</a></li>
+<li class="chapter" data-level="2.1.7" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#argument-names"><i class="fa fa-check"></i><b>2.1.7</b> Argument names</a></li>
+<li class="chapter" data-level="2.1.8" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#tab-auto-complete"><i class="fa fa-check"></i><b>2.1.8</b> Tab auto-complete</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#objects-and-the-assign---operator"><i class="fa fa-check"></i><b>2.2</b> Objects and the assign (<code>&lt;-</code>) operator</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#the-operator"><i class="fa fa-check"></i><b>2.2.1</b> The $ operator</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#code-comments"><i class="fa fa-check"></i><b>2.2.2</b> Code comments</a></li>
+<li class="chapter" data-level="2.2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#pipes"><i class="fa fa-check"></i><b>2.2.3</b> Pipes (<code>%&gt;%</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#help"><i class="fa fa-check"></i><b>2.3</b> Getting help</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#package-reference-manuals"><i class="fa fa-check"></i><b>2.3.1</b> Package reference manuals</a></li>
+<li class="chapter" data-level="2.3.2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#googling"><i class="fa fa-check"></i><b>2.3.2</b> Googling</a></li>
+<li class="chapter" data-level="2.3.3" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#vignettes"><i class="fa fa-check"></i><b>2.3.3</b> Vignettes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html#resources-intro"><i class="fa fa-check"></i><b>2.4</b> Further Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html"><i class="fa fa-check"></i><b>3</b> Part 2 - Analyzing Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#ilo-part2"><i class="fa fa-check"></i><b>3.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="3.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#dealing-with-data-great-british-bake-off-gbbo"><i class="fa fa-check"></i><b>3.2</b> Dealing with Data: Great British Bake Off (GBBO)</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#reading-data-in"><i class="fa fa-check"></i><b>3.2.1</b> Reading data in</a></li>
+<li class="chapter" data-level="3.2.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#looking-at-data"><i class="fa fa-check"></i><b>3.2.2</b> Looking at data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#exploring-data"><i class="fa fa-check"></i><b>3.2.3</b> Exploring data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#dplyr-functions-for-data-wrangling"><i class="fa fa-check"></i><b>3.3</b> <code>dplyr</code> functions for data wrangling</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-a-new-variable-and-adding-it-to-a-data-object"><i class="fa fa-check"></i><b>3.3.1</b> Creating a new variable and adding it to a data object</a></li>
+<li class="chapter" data-level="3.3.2" data-path="part-2---analyzing-data.html"><a href="part-2---analyzing-data.html#creating-summaries-of-data"><i class="fa fa-check"></i><b>3.3.2</b> Creating summaries of data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html"><i class="fa fa-check"></i><b>4</b> Visualizing Data: Great British Bake Off (GBBO)</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html#building-plots"><i class="fa fa-check"></i><b>4.0.1</b> Building plots</a></li>
+<li class="chapter" data-level="4.0.2" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html#counting-categories"><i class="fa fa-check"></i><b>4.0.2</b> Counting categories</a></li>
+<li class="chapter" data-level="4.0.3" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html#one-continuous-variable"><i class="fa fa-check"></i><b>4.0.3</b> One continuous variable</a></li>
+<li class="chapter" data-level="4.0.4" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html#grouped-continuous-variables"><i class="fa fa-check"></i><b>4.0.4</b> Grouped continuous variables</a></li>
+<li class="chapter" data-level="4.0.5" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html#two-continuous-variables"><i class="fa fa-check"></i><b>4.0.5</b> Two continuous variables</a></li>
+<li class="chapter" data-level="4.0.6" data-path="visualizing-data-great-british-bake-off-gbbo.html"><a href="visualizing-data-great-british-bake-off-gbbo.html#two-continuous-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>4.0.6</b> Two continuous variables and a categorical variable</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S1Y Lab 1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualizing-data-great-british-bake-off-gbbo" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Visualizing Data: Great British Bake Off (GBBO)<a href="visualizing-data-great-british-bake-off-gbbo.html#visualizing-data-great-british-bake-off-gbbo" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="building-plots" class="section level3 hasAnchor" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> Building plots<a href="visualizing-data-great-british-bake-off-gbbo.html#building-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are multiple approaches to data visualisation in R; in this course we will use the popular package <code>ggplot2</code>, which is part of the larger <code>tidyverse</code> collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <code>ggplot2</code> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any picture as having multiple elements that sit semi-transparently over each other.</p>
+<p>Figure 1 displays the steps to create a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a geom) that is desired for these variables is specified (layer 3) - in this case geom_point() is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).</p>
+<div class="figure"><span style="display:block;" id="fig:img-layers"></span>
+<img src="images/plot_layers.png" alt="Figure 1: Steps to create a layered plot"  />
+<p class="caption">
+Figure 4.1: Figure 1: Steps to create a layered plot
+</p>
+</div>
+<p>Importantly, each layer is independent and independently customisable. For example, the size, colour and position of each component can be adjusted. The use of layers makes it easy to build up complex plots step-by-step, and to adapt or extend plots from existing code.</p>
+<p>Using the concept of building up a plot by layers, we will describe some specific plot types. Different types of data require different types of plots, so the following sections are organised by data type.</p>
+<p>The <code>ggplot2</code> <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheat sheet</a> is a great resource to help you find plots appropriate to your data, based on how many variables you're plotting and what type they are. The examples below all use the GBBO data, but each plot communicates something different.</p>
+<p>We don't expect you to memorise all of the plot types or the methods for customising them, but it will be helpful to try out the code in the examples below for yourself, changing values to test your understanding.</p>
+</div>
+<div id="counting-categories" class="section level3 hasAnchor" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> Counting categories<a href="visualizing-data-great-british-bake-off-gbbo.html#counting-categories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="bar-plot" class="section level4 hasAnchor" number="4.0.2.1">
+<h4><span class="header-section-number">4.0.2.1</span> Bar plot<a href="visualizing-data-great-british-bake-off-gbbo.html#bar-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If you want to count the number of things per category, you can use <code>geom_bar()</code>. You only need to provide a x mapping to <code>geom_bar()</code> because by default <code>geom_bar()</code> uses the number of observations in each group of x as the value for y, so you don't need to tell it what to put on the y-axis.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel)) <span class="sc">+</span></span>
+<span id="cb43-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Notice that layers are added using the plus <code>+</code> symbol at the end of the previous line, not at the start of the next line. For example if you make this mistake:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel))</span>
+<span id="cb44-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p>...it will produce an empty 'base layer' and then an error like this:</p>
+<p><img src="main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<pre><code>## Error:
+## ! Cannot use `+.gg()` with a single argument. Did you accidentally put + on a new line?</code></pre>
+<p> 
+ </p>
+<ul>
+<li><strong>Inspect the code below and try running it layer by layer to figure out how things like the order of the columns and their labels change.</strong></li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, </span>
+<span id="cb46-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
+<span id="cb46-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb46-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Number of episodes of GBBO broadcast on each channel&quot;</span>)<span class="sc">+</span> <span class="co"># adds a plot title</span></span>
+<span id="cb46-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Episodes&quot;</span>)<span class="sc">+</span> <span class="co"># adds an axis label</span></span>
+<span id="cb46-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span> <span class="co"># removes the legend</span></span>
+<span id="cb46-7"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb46-8"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change axis label</span></span>
+<span id="cb46-9"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Broadcast Channels (in chronological order)&quot;</span>, </span>
+<span id="cb46-10"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change to chronological order</span></span>
+<span id="cb46-11"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;BBC2&quot;</span>, <span class="st">&quot;BBC1&quot;</span>, <span class="st">&quot;C4&quot;</span>), </span>
+<span id="cb46-12"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change labels</span></span>
+<span id="cb46-13"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;BBC 2&quot;</span>, <span class="st">&quot;BBC 1&quot;</span>, <span class="st">&quot;Channel 4&quot;</span>)</span>
+<span id="cb46-14"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb46-14" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><img src="main_files/figure-html/custom-bar-1.png" width="672" /></p>
+<p> </p>
+<ul>
+<li><strong>Copy and edit the code above to produce a bar plot showing the number of episodes in each series of GBBO</strong></li>
+</ul>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> series, </span>
+<span id="cb47-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill =</span> series)) <span class="sc">+</span></span>
+<span id="cb47-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb47-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Number of episodes of GBBO broadcast in each series&quot;</span>)<span class="sc">+</span>  <span class="co"># adds a plot title</span></span>
+<span id="cb47-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Episodes&quot;</span>)<span class="sc">+</span>      <span class="co"># adds an axis label</span></span>
+<span id="cb47-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Series&quot;</span>)<span class="sc">+</span>                  <span class="co"># adds an axis label</span></span>
+<span id="cb47-7"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span> <span class="co"># removes the legend</span></span>
+<span id="cb47-8"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(</span>
+<span id="cb47-9"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change to categorical labels</span></span>
+<span id="cb47-10"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;10&quot;</span>), </span>
+<span id="cb47-11"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># change labels</span></span>
+<span id="cb47-12"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;10&quot;</span>)</span>
+<span id="cb47-13"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb47-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="main_files/figure-html/ex-bar-1.png" width="672" /></p>
+</div>
+</div>
+<div id="column-plot" class="section level4 hasAnchor" number="4.0.2.2">
+<h4><span class="header-section-number">4.0.2.2</span> Column plot<a href="visualizing-data-great-british-bake-off-gbbo.html#column-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If your data already have a column with the number you want to be the height of each bar or column, you can use <code>geom_col()</code> to plot it. Recall that the <code>ratings</code> data contains the variable <code>viewers_7day</code> which contains the number of viewers in the 7 days after each episode which we can plot as the height of each bar/column by setting <code>y=viewers_7day</code>. But what will we use to define where they are plotted on the x-axis?</p>
+<ul>
+<li><p><strong>After considering the values contained in the variable <code>series</code> and/or <code>episode</code> complete this statement:</strong></p>
+<p><strong>Neither the values in <code>series</code> or <code>episode</code> can be used to define <code>x=</code>:</strong> <select class='webex-select'><option value='blank'></option><option value='answer'>TRUE</option><option value=''>FALSE</option></select></p></li>
+</ul>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(ratings,series,episode)</span></code></pre></div>
+<pre><code>## # A tibble: 94 x 2
+##    series episode
+##    &lt;fct&gt;  &lt;fct&gt;  
+##  1 1      1      
+##  2 1      2      
+##  3 1      3      
+##  4 1      4      
+##  5 1      5      
+##  6 1      6      
+##  7 2      1      
+##  8 2      2      
+##  9 2      3      
+## 10 2      4      
+## # ... with 84 more rows
+## # i Use `print(n = ...)` to see more rows</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that neither series nor episode contain unique values, which would be necessary to define the position on the x-axis for each of the columns with height equal to the ratings (viewers_7day)</span></span></code></pre></div>
+</div>
+<p>So before we can create the column plot, we need to create a new variable:</p>
+<ul>
+<li><strong>Run this code to create a new variable <code>ep_id</code> which is the unique index indicating the chronological order of each episode (using the <code>row_number()</code> function and the fact that it's the same as the order it appears in the <code>ratings</code> data).</strong></li>
+</ul>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb51-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ep_id =</span> <span class="fu">row_number</span>())</span></code></pre></div>
+<p>Now we have the two variables we need to make the column plot.</p>
+<ul>
+<li><strong>Inspect and run this code to produce the plot below.</strong></li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day, <span class="at">fill =</span> series)) <span class="sc">+</span></span>
+<span id="cb52-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb52-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;7-Day Viewers across All Series/Episodes&quot;</span>)<span class="sc">+</span></span>
+<span id="cb52-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of viewers (millions)&quot;</span>)<span class="sc">+</span>      <span class="co"># adds an axis label</span></span>
+<span id="cb52-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Episode Index&quot;</span>)<span class="sc">+</span>                     <span class="co"># adds an axis label</span></span>
+<span id="cb52-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name=</span><span class="st">&quot;Series&quot;</span>)         <span class="co"># set the name of the legend  </span></span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+</div>
+<div id="pie-chart" class="section level4 hasAnchor" number="4.0.2.3">
+<h4><span class="header-section-number">4.0.2.3</span> Pie chart<a href="visualizing-data-great-british-bake-off-gbbo.html#pie-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Pie charts are a <a href="https://www.data-to-viz.com/caveat/pie.html" target="_blank">misleading form of data visualisation</a>, so we won't cover them.</p>
+<p> </p>
+</div>
+<div id="test-your-understanding" class="section level4 hasAnchor" number="4.0.2.4">
+<h4><span class="header-section-number">4.0.2.4</span> <strong>Test your understanding</strong><a href="visualizing-data-great-british-bake-off-gbbo.html#test-your-understanding" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here is a small data table.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="right">population</th>
+<th align="left">island</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Northern Ireland</td>
+<td align="right">1,895,510</td>
+<td align="left">Ireland</td>
+</tr>
+<tr class="even">
+<td align="left">Wales</td>
+<td align="right">3,169,586</td>
+<td align="left">Great Britain</td>
+</tr>
+<tr class="odd">
+<td align="left">Republic of Ireland</td>
+<td align="right">4,937,786</td>
+<td align="left">Ireland</td>
+</tr>
+<tr class="even">
+<td align="left">Scotland</td>
+<td align="right">5,466,000</td>
+<td align="left">Great Britain</td>
+</tr>
+<tr class="odd">
+<td align="left">England</td>
+<td align="right">56,550,138</td>
+<td align="left">Great Britain</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>What geom would you use to plot the population for each of the 5 countries? <select class='webex-select'><option value='blank'></option><option value='x'>geom_bar</option><option value='answer'>geom_col</option></select></li>
+<li>What mapping would you use?
+<div id="radio_YGLIPCXEQV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YGLIPCXEQV" value="answer"></input> <span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_YGLIPCXEQV" value="x"></input> <span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_YGLIPCXEQV" value="x"></input> <span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_YGLIPCXEQV" value="x"></input> <span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_YGLIPCXEQV" value="x"></input> <span>aes(y = population)</span></label>
+</div></li>
+<li>What geom would you use to plot the number of countries on each island? <select class='webex-select'><option value='blank'></option><option value='answer'>geom_bar</option><option value='x'>geom_col</option></select></li>
+<li>What mapping would you use?
+<div id="radio_PXUEQFLCOR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PXUEQFLCOR" value="x"></input> <span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_PXUEQFLCOR" value="x"></input> <span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_PXUEQFLCOR" value="x"></input> <span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_PXUEQFLCOR" value="answer"></input> <span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_PXUEQFLCOR" value="x"></input> <span>aes(y = population)</span></label>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="one-continuous-variable" class="section level3 hasAnchor" number="4.0.3">
+<h3><span class="header-section-number">4.0.3</span> One continuous variable<a href="visualizing-data-great-british-bake-off-gbbo.html#one-continuous-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you have a continuous variable, like the number of views 7 days after each broadcast, you can use <code>geom_histogram()</code> or <code>geom_density()</code> to show the distribution. Just like <code>geom_bar()</code> you are only required to specify the <code>x</code> variable.</p>
+<div id="histogram" class="section level4 hasAnchor" number="4.0.3.1">
+<h4><span class="header-section-number">4.0.3.1</span> Histogram<a href="visualizing-data-great-british-bake-off-gbbo.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A histogram splits the data into "bins" along the x-axis and shows the count of how many observations are in each bin along the y-axis.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb53-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-37"></span>
+<img src="main_files/figure-html/unnamed-chunk-37-1.png" alt="Histogram of ratings." width="672" />
+<p class="caption">
+Figure 4.2: Histogram of ratings.
+</p>
+</div>
+<!-- By default, the bars start *centered* on 0, so if `binwidth` is set to 15, the first bar would include -7.5 to 7.5 seconds, which doesn't make much sense. We can set `boundary = 0` so that each bar represents increments of 15 seconds *starting* from 0.  -->
+<!-- ```{r} -->
+<!-- ggplot(ratings, aes(x = viewers_7day)) + -->
+<!--   geom_histogram(boundary = 0) -->
+<!-- ``` -->
+<p>You should always set the <code>binwidth</code> or number of <code>bins</code> to something meaningful for your data (otherwise you get an annoying message, like the one above). You might need to try a few options before you find something that looks good and conveys the meaning of your plot.</p>
+<ul>
+<li><strong>Try changing the values of <code>binwidth</code> and <code>bins</code> below to see what works best.</strong></li>
+</ul>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adjust width of each bar</span></span>
+<span id="cb55-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb55-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span>
+<span id="cb55-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co"># adjust number of bars</span></span>
+<span id="cb55-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb55-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p>Finally, the default style of grey bars is ugly, so you can change that by setting the <code>fill</code> and <code>colour</code>, as well as using <code>scale_x_continuous()</code> to update the axis labels.</p>
+<ul>
+<li><strong>Adapt and run this code to control the appearance of the histogram</strong></li>
+</ul>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb56-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb56-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb56-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
+<span id="cb56-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb56-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb56-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb56-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb56-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of viewers 7 days after broadcast (in millions)&quot;</span>)</span></code></pre></div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb57-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb57-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb57-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
+<span id="cb57-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb57-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb57-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb57-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb57-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of viewers 7 days after broadcast (in millions)&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="grouped-continuous-variables" class="section level3 hasAnchor" number="4.0.4">
+<h3><span class="header-section-number">4.0.4</span> Grouped continuous variables<a href="visualizing-data-great-british-bake-off-gbbo.html#grouped-continuous-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are several ways to compare continuous data across groups. Which you choose depends on what point you are trying to make with the plot.</p>
+<div id="subdividing-distributions" class="section level4 hasAnchor" number="4.0.4.1">
+<h4><span class="header-section-number">4.0.4.1</span> Subdividing distributions<a href="visualizing-data-great-british-bake-off-gbbo.html#subdividing-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In previous plots, we have used <code>fill</code> purely for visual reasons, e.g., we have changed the colour of the histogram bars to make them look nicer. However, you can also use <code>fill</code> to represent another variable so that the colours become meaningful.</p>
+<p>Setting the <code>fill</code> aesthetic in the mapping will produce different coloured bars for each category of the <code>fill</code> variable, in this case <code>issue_category</code>.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> viewers_7day, <span class="at">fill =</span> channel)) <span class="sc">+</span></span>
+<span id="cb58-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>,</span>
+<span id="cb58-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb58-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-41"></span>
+<img src="main_files/figure-html/unnamed-chunk-41-1.png" alt="Histogram with categories represented by fill." width="672" />
+<p class="caption">
+Figure 4.3: Histogram with categories represented by fill.
+</p>
+</div>
+</div>
+<div id="violin-plot" class="section level4 hasAnchor" number="4.0.4.2">
+<h4><span class="header-section-number">4.0.4.2</span> Violin plot<a href="visualizing-data-great-british-bake-off-gbbo.html#violin-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Another way to compare groups of continuous variables is the violin plot. This is like a density plot, but rotated 90 degrees and mirrored - the fatter the violin, the larger proportion of data points there are at that value.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb59-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb59-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb59-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;scale = &quot;area&quot;&#39;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:violin-plot"></span>
+<img src="main_files/figure-html/violin-plot-1.png" alt="The default violin plot gives each shape the same area. Set scale='count' to make the size proportional to the number of observations." width="768" />
+<p class="caption">
+Figure 4.4: The default violin plot gives each shape the same area. Set scale='count' to make the size proportional to the number of observations.
+</p>
+</div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb60-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb60-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">&quot;count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb60-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;scale = &quot;count&quot;&#39;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-42-1.png" width="768" /></p>
+</div>
+<div id="boxplot" class="section level4 hasAnchor" number="4.0.4.3">
+<h4><span class="header-section-number">4.0.4.3</span> Boxplot<a href="visualizing-data-great-british-bake-off-gbbo.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Boxplots serve a similar purpose to violin plots. They don't show you the shape of the distribution, but rather some statistics about it. The middle line represents the median; half the data are above this line and half below it. The box encloses the 25th to 75th percentiles of the data, so 50% of the data falls inside the box. The "whiskers" extending above and below the box extend 1.5 times the height of the box, although you can change this with the <code>coef</code> argument. The points show outliers -- individual data points that fall outside of this range.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb61-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> channel, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb61-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:box-plot"></span>
+<img src="main_files/figure-html/box-plot-1.png" alt="Basic boxplot." width="672" />
+<p class="caption">
+Figure 4.5: Basic boxplot.
+</p>
+</div>
+<p> 
+ </p>
+</div>
+<div id="test-your-understanding-1" class="section level4 hasAnchor" number="4.0.4.4">
+<h4><span class="header-section-number">4.0.4.4</span> Test your understanding<a href="visualizing-data-great-british-bake-off-gbbo.html#test-your-understanding-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="main_files/figure-html/test-grouped-continuous-1.png" width="672" /><img src="main_files/figure-html/test-grouped-continuous-2.png" width="672" /></p>
+<ul>
+<li>How would you create plot A? <select class='webex-select'><option value='blank'></option><option value='x'>geom_box()</option><option value='x'>geom_boxplot()</option><option value='answer'>geom_violin()</option><option value='x'>geom_violinplot()</option></select></li>
+<li>How would you create plot B? <select class='webex-select'><option value='blank'></option><option value='x'>geom_box()</option><option value='answer'>geom_boxplot()</option><option value='x'>geom_violin()</option><option value='x'>geom_violinplot()</option></select></li>
+<li>What does the mapping look like for both plots?
+<div id="radio_AIPPKQZTUI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_AIPPKQZTUI" value="x"></input> <span>aes(x = series, y = viewers_7day, colour = series)</span></label><label><input type="radio" autocomplete="off" name="radio_AIPPKQZTUI" value="x"></input> <span>aes(x = series, y = viewers_7day, colour = viewers_7day)</span></label><label><input type="radio" autocomplete="off" name="radio_AIPPKQZTUI" value="answer"></input> <span>aes(x = series, y = viewers_7day, fill = series)</span></label><label><input type="radio" autocomplete="off" name="radio_AIPPKQZTUI" value="x"></input> <span>aes(x = series, y = viewers_7day, fill = viewers_7day)</span></label>
+</div></li>
+<li>Which series had the highest ratings? <select class='webex-select'><option value='blank'></option><option value='NA'>1</option><option value='NA'>2</option><option value='NA'>3</option><option value='NA'>4</option><option value='NA'>5</option><option value='NA'>6</option><option value='answer'>7</option><option value='NA'>8</option><option value='NA'>9</option><option value='NA'>10</option></select></li>
+<li>Which channel brodcast the series with the highest ratings? (You need to think back to answer this question) <select class='webex-select'><option value='blank'></option><option value='answer'>BBC 1</option><option value='NA'>BBC 2</option><option value='NA'>Channel 4</option></select></li>
+</ul>
+</div>
+</div>
+<div id="two-continuous-variables" class="section level3 hasAnchor" number="4.0.5">
+<h3><span class="header-section-number">4.0.5</span> Two continuous variables<a href="visualizing-data-great-british-bake-off-gbbo.html#two-continuous-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you want to see how two continuous variables are related, set one as the x-axis and the other as the y-axis. For example, what if we want to see the changes in ratings over the episodes/series in chronological order.</p>
+<div id="scatterplot" class="section level4 hasAnchor" number="4.0.5.1">
+<h4><span class="header-section-number">4.0.5.1</span> Scatterplot<a href="visualizing-data-great-british-bake-off-gbbo.html#scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The function to create a scatterplot is called <code>geom_point()</code>.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb62-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:demo-point"></span>
+<img src="main_files/figure-html/demo-point-1.png" alt="Scatterplot with geom_point()." width="672" />
+<p class="caption">
+Figure 4.6: Scatterplot with geom_point().
+</p>
+</div>
+<ul>
+<li><strong>Edit and run the above code to join up the points in the scatterplot by adding the function <code>+ geom_line</code> and then modify the code further to remove the points</strong></li>
+</ul>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb63-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb63-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb63-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Scatterplot with both points and lines&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/demo-line-1.png" width="672" /></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ratings, <span class="fu">aes</span>(<span class="at">x =</span> ep_id, <span class="at">y =</span> viewers_7day)) <span class="sc">+</span></span>
+<span id="cb64-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb64-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Scatterplot with just lines&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/demo-line-2.png" width="672" /></p>
+</div>
+<p>These plots show each individual episodes' ratings and are perhaps more detailed than we need. If we were just interested in looking at the ratings across series, then we could create summaries for each series and plot these.</p>
+<ul>
+<li><strong>Examine and run this code to produce a lineplot of the average ratings for each series</strong></li>
+</ul>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-1" aria-hidden="true" tabindex="-1"></a>avg_ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb65-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(series, episode, viewers_7day) <span class="sc">%&gt;%</span> </span>
+<span id="cb65-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span></span>
+<span id="cb65-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_viewers_7day =</span> <span class="fu">mean</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb65-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb65-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(avg_ratings, <span class="fu">aes</span>(<span class="at">x =</span> series, <span class="at">y =</span> avg_viewers_7day, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb65-8"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb65-9"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb65-10"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb65-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Great British Bake Off Average Ratings&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<div class="webex-solution">
+<button>
+Optional: Why do we need group=1
+</button>
+<p>Because the <code>x</code> values in <code>aes()</code> are a factor, by default <code>geom_line()</code> treats each unique <code>x</code> value as a separate group and tries to connect points only inside each group. Setting <code>group=1</code> in <code>aes()</code> ensures that all values are treated as one group (and therefore connected by lines using <code>geom_line()</code>).</p>
+</div>
+<p> </p>
+</div>
+</div>
+<div id="two-continuous-variables-and-a-categorical-variable" class="section level3 hasAnchor" number="4.0.6">
+<h3><span class="header-section-number">4.0.6</span> Two continuous variables and a categorical variable<a href="visualizing-data-great-british-bake-off-gbbo.html#two-continuous-variables-and-a-categorical-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is often the case that we are interested in relationships between more then two variables.</p>
+<p>The code below illustrates how to build more complex graphical summaries, in this case number of viewers of the first and last episode in each series.</p>
+<ul>
+<li><strong>You do not need to produce this plot but have a look and see if you can follow the code that is used to create it.</strong></li>
+</ul>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(series, episode, viewers_7day) <span class="sc">%&gt;%</span> </span>
+<span id="cb66-3"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(series) <span class="sc">%&gt;%</span></span>
+<span id="cb66-4"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(episode <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> episode <span class="sc">==</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(episode))) <span class="sc">%&gt;%</span></span>
+<span id="cb66-5"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">episode =</span> <span class="fu">recode</span>(episode, <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;first&quot;</span>, <span class="at">.default =</span> <span class="st">&quot;last&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb66-6"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb66-7"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> series,</span>
+<span id="cb66-9"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> viewers_7day,</span>
+<span id="cb66-10"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> episode, </span>
+<span id="cb66-11"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">group =</span> episode</span>
+<span id="cb66-12"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-12" aria-hidden="true" tabindex="-1"></a>                      )) <span class="sc">+</span></span>
+<span id="cb66-13"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb66-14"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb66-15"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Great British Bake Off Finales Get More Viewers than Premiers&quot;</span>) <span class="sc">+</span></span>
+<span id="cb66-16"><a href="visualizing-data-great-british-bake-off-gbbo.html#cb66-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Episode&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="part-2---analyzing-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["main.pdf", "main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

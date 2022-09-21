@@ -1,0 +1,105 @@
+---
+title: "S1Y Lab 1"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+---
+
+# Part 1: Intro to R and RStudio ![The R logo](images/R-Logo1.png){width=10%} ![The RStudio logo](images/RStudio.jpg){width=10%}
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+if (!requireNamespace("webexercises")) {
+  stop("You must have the 'webexercises' package installed to knit to HTML.\n   install.packages(\"webexercises\")")
+} else {
+  library("webexercises")
+}
+
+library(tidyverse)
+```
+
+```{r echo = FALSE}
+set.seed(12042016)
+```
+
+
+
+
+<!-- ```{r img-rrstudio, echo=FALSE, out.width = "10%", fig.cap="The R and RStudio logos"} -->
+<!-- knitr::include_graphics("images/R-Logo1.png") -->
+<!-- knitr::include_graphics("images/RStudio.jpg") -->
+<!-- ``` -->
+
+## Intended Learning Outcomes {#ilo-intro}
+
+* Be introduced to R and RStudio
+* Be able to load add-on packages
+* Be able to get help for packages and functions
+* Be able to create objects by writing and running code in the console
+
+
+## R and RStudio {#intro-r-rstudio}
+
+R is a programming language that you will write code in and RStudio is an Integrated Development Environment (IDE) which makes working in R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without RStudio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
+
+<div id="hello" class="greeting message" style="color: grey;">
+### OPTIONAL: Installing R and RStudio {#intro-installing-r}
+
+You **DO NOT** need to intall R or RStudio on your own laptop or desktop computer.  You are expected to complete these labs on the universities PCs, and these already have R and RStudio installed.  However, R and (basic) RStudio are free to download and install, so Lab 0 is an optional lab which has technical details on installing R and RStudio on your computer. If you already had R and/or RStudio installed, we recommend updating to the latest version before you work through this course. 
+</div>
+
+## RStudio {#rstudio_ide}
+
+The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) .  The RStudio IDE is arranged with four window.
+
+```{r img-rstudio, echo=FALSE, fig.cap="The RStudio IDE"}
+#knitr::include_graphics("images/intro/rstudio.png")
+#knitr::include_graphics("images/first-open-RStudio.jpg")
+knitr::include_graphics("images/Opened-RScript.jpg")
+```
+
+By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.
+
+The lower left pane is the **console pane**, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.
+
+The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the **Environment** tab and the **Help** tab. The environment tab lists some information about the object that you have defined in your code. We'll learn more about the Help tab in Section\ \@ref(function-help).
+
+In the lower right pane, the most used tabs are the **Files** tab for directory structure, the **Plots** tab for plots made in a script, the **Packages** tab for managing add-on packages (see Section\ \@ref(packages)), and the **Viewer** tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
+
+<!-- ### Reproducibility {#intro-reproducibility} -->
+
+<!-- In this class, you will be learning how to make reproducible reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results. -->
+
+<!-- When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to create a report every month with the social media analytics for your company, a reproducible report allows you to download a new month's data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable. -->
+
+<!-- ::: {.try data-latex=""} -->
+<!-- Appendix\ \@ref(rstudio-settings) shows you how to change two important settings in the global Options to increase reproducibility. Your settings should have: -->
+
+<!-- * Restore .RData into workspace at startup: `r mcq(c("Checked", answer = "Not Checked"))` -->
+<!-- * Save workspace to .RData on exit: `r mcq(c("Always", answer = "Never", "Ask"))` -->
+<!-- ::: -->
+
+<!-- ### Themes and accessiblilty -->
+
+<!-- You can customise how RStudio looks to make it work for you. Click `Tools` - `Global Options` - `Appearance`. You can change the default font, font size, and general appearance of RStudio, including using dark mode. Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look nice! -->
+
+
+<!-- ## Sessions {#intro-sessions} -->
+
+<!-- If you have the above settings configured correctly, when you open up RStudio and start writing code, loading packages, and creating objects, you will be doing so in a new session and your Environment tab should be completely empty. If you find that your code isn't working and you can't figure out why, it might be worth restarting your R session. This will clear the environment and detach all loaded packages - think of it like restarting your phone. There are several ways that you can restart R: -->
+
+<!-- * Menu: Session > Restart R -->
+<!-- * <span class=\"apple\">Cmd-Shift-F10</span> or <span class=\"windows\">Ctl-Shift-F10</span> -->
+<!-- * type `.rs.restartR()` in the console -->
+
+<!-- Try doing each of these now. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item.  -->
+
+## Credit where credit is due
+
+This introductory lab incorporates and adapts materials from:
+
+Nordmann, E. & DeBruine, L. (2022) Applied Data Skills. v1.0. Retrieved from https://psyteachr.github.io/ads-v1/ doi: 10.5281/zenodo.6365077 and
+
+Hill, A. (2022) Data Visualization in the Tidyverse: The Great Tidy Plot Off. Retrieved from https://alison.netlify.app/uo-tidy-bakeoff

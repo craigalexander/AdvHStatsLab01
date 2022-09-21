@@ -1,0 +1,16 @@
+eq:eq1
+eq:eq2
+eq:eq3
+eq:eq4
+fig:fig1
+intro
+intended-learning-outcomes
+introduction
+examples
+example-1---crime-dataset
+twopointtwo
+calculating-the-correlation-by-hand
+exercises
+exercise-1---cheese-dataset
+exercise-2---nicholas-cage-data
+exercise-3---context-identifying-relationships

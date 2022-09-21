@@ -1,0 +1,29 @@
+
+# Group Tasks
+
+## BFRSS Survey Questions
+
+The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey of 350,000 people in the United States. As its name implies, the BRFSS is designed to identify risk factors in the adult population and report emerging health trends. For example, respondents are asked about their diet and weekly physical activity, their HIV/AIDS status, possible tobacco use, and even their level of healthcare coverage. The <a href="http://www.cdc.gov/brfss">BRFSS Web site</a> contains a complete description of the survey, including the research questions that motivate the study and many interesting results derived from the data.
+
+You will focus on a random sample of 20,000 people from the BRFSS survey conducted in 2000. While there are over 200 variables in this data set, you will work with a small subset.
+
+Load the data set of 20,000 observations into the object `cdc` and look at what it contains by running the following code. It may take a couple of minutes for the data to load, depending on your internet connection, so be patient!
+
+```{r ofqloaddata, eval = FALSE, echo = TRUE}
+
+source("http://www.openintro.org/stat/data/cdc.R")
+str(cdc)
+```
+
+
+1.  Make a scatterplot of weight (in pounds) versus desired weight (in pounds). Describe the relationship between these two variables. It may be helpful to add the command `+  geom_abline()` onto the end of your plot code, which adds in the y = x line.
+
+2.  Let's consider a new variable: the difference between desired weight (`wtdesire`) and current weight (`weight`). Create this new variable by subtracting the two columns in the data frame and assigning them to a new object called `wdiff`.
+
+3.  What type of data is `wdiff`? If an observation wdiff is 0, what does this mean about the person's weight and desired weight. What if `wdiff` is positive or negative?
+
+4.  Describe the distribution of `wdiff` in terms of its center, shape, and spread, including any plots you use. What does this tell us about how people feel about their current weight?
+
+5.  Using numerical summaries and a side-by-side box plot, determine if men tend to view their weight differently than women.
+
+<!-- 6.  Now it's time to get creative. Find the mean and standard deviation of weight and determine what proportion of the weights are within one standard deviation of the mean. -->

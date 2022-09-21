@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Examples | Practical 2 - Understanding correlation and further exploring relationships</title>
+  <meta name="description" content="2 Examples | Practical 2 - Understanding correlation and further exploring relationships" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Examples | Practical 2 - Understanding correlation and further exploring relationships" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Examples | Practical 2 - Understanding correlation and further exploring relationships" />
+  
+  
+  
+
+<meta name="author" content="Team in Room 420 - Megan Ruffle, Naphon Olley, Jennifer James, William Ryan" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="exercises.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.2</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>2</b> Examples</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="examples.html"><a href="examples.html#example-1---crime-dataset"><i class="fa fa-check"></i><b>2.1</b> Example 1 - <code>crime</code> dataset</a></li>
+<li class="chapter" data-level="2.2" data-path="examples.html"><a href="examples.html#twopointtwo"><i class="fa fa-check"></i><b>2.2</b> Example 2 - <code>phys</code> dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="examples.html"><a href="examples.html#calculating-the-correlation-by-hand"><i class="fa fa-check"></i><b>2.3</b> Calculating the correlation by hand</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>3</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exercises.html"><a href="exercises.html#exercise-1---cheese-dataset"><i class="fa fa-check"></i><b>3.1</b> Exercise 1 - <code>cheese</code> dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="exercises.html"><a href="exercises.html#exercise-2---nicholas-cage-data"><i class="fa fa-check"></i><b>3.2</b> Exercise 2 - Nicholas Cage data</a></li>
+<li class="chapter" data-level="3.3" data-path="exercises.html"><a href="exercises.html#exercise-3---context-identifying-relationships"><i class="fa fa-check"></i><b>3.3</b> Exercise 3 - Context: identifying relationships</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Practical 2 - Understanding correlation and further exploring relationships</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="examples" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Examples<a href="examples.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<hr />
+<div id="example-1---crime-dataset" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Example 1 - <code>crime</code> dataset<a href="examples.html#example-1---crime-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: lower-alpha">
+<li>Use <code>pairs</code> to visualise the data and determine which predictors may be useful in predicting
+Crime.</li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>The <code>R</code> command <code>pairs()</code> may be used to see the relationships between all variables.</p>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="examples.html#cb1-1" aria-hidden="true" tabindex="-1"></a>crime <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;crime.csv&quot;</span>)</span>
+<span id="cb1-2"><a href="examples.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(crime[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">lower.panel =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="examples.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We add [,-1] to the end of crime to remove the first column which has non-numeric arguments (state names)</span></span></code></pre></div>
+</div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Build a simple linear regression model against <code>Dropout</code> and interpret estimated coefficients.</li>
+</ol>
+<p>According to the model, when Dropout is equal to 0, Crime would be roughly <select class='webex-select'><option value='blank'></option><option value=''>2000</option><option value='answer'>2200</option><option value=''>2400</option></select>.
+For each 1 unit increase in the Dropout variable, Crime would go up by roughly <input class='webex-solveme nospaces' size='8' data-answer='["281.7613"]'/> <em>(to 4 decimal places)</em>.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="examples.html#cb3-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Crime <span class="sc">~</span> Dropout, <span class="at">data =</span> crime)</span>
+<span id="cb3-2"><a href="examples.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(model1)</span></code></pre></div>
+<pre><code>## (Intercept)     Dropout 
+##   2196.5435    281.7613</code></pre>
+</div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Calculate the least squares estimates of model parameters using the vector-matrix formulation.</li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>The following <code>R</code> commands will come in uesful:</p>
+<center>
+<code>model.matrix # returns the design matrix</code>
+</center>
+<center>
+<code>t # gets the transpose of a vector or matrix</code>
+</center>
+<center>
+<code>%*% # multiplies matrices together</code>
+</center>
+<center>
+<code>solve # computes the inverse of a matrix</code>
+</center>
+<p>Recall the least squares estimate of the model parameters in terms of vector-matrix notation is given by</p>
+<p><span class="math display" id="eq:eq1">\[\begin{equation}
+\hat{\beta}=(X^{T}X)^{-1}X^{T}Y
+\tag{1.1}
+\end{equation}\]</span></p>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="examples.html#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(<span class="sc">~</span> Dropout, <span class="at">data =</span> crime)</span>
+<span id="cb5-2"><a href="examples.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="examples.html#cb5-3" aria-hidden="true" tabindex="-1"></a>XtX <span class="ot">&lt;-</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> X</span>
+<span id="cb5-4"><a href="examples.html#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="examples.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The inverse of XtX can be found by using solve(XtX)</span></span>
+<span id="cb5-6"><a href="examples.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="examples.html#cb5-7" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> crime<span class="sc">$</span>Crime</span>
+<span id="cb5-8"><a href="examples.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="examples.html#cb5-9" aria-hidden="true" tabindex="-1"></a>XtY <span class="ot">&lt;-</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> Y</span>
+<span id="cb5-10"><a href="examples.html#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="examples.html#cb5-11" aria-hidden="true" tabindex="-1"></a>beta.hat <span class="ot">&lt;-</span> <span class="fu">solve</span>(XtX) <span class="sc">%*%</span> XtY</span>
+<span id="cb5-12"><a href="examples.html#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="examples.html#cb5-13" aria-hidden="true" tabindex="-1"></a>beta.hat</span></code></pre></div>
+<pre><code>##                  [,1]
+## (Intercept) 2196.5435
+## Dropout      281.7613</code></pre>
+</div>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Check this is same as the results computed using the summation notation (discussed in Practical 1).</li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Recall that the equations for the least square estimates using the summation notation are</p>
+<p><span class="math display" id="eq:eq3">\[\begin{equation}
+\hat{\beta}_0= \overline{Y}-\hat{\beta}_1 \overline{x}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:eq4">\[\begin{equation}
+\hat{\beta}_1= \frac{\sum^n_{i=1}(x_i-\overline{x})(Y_i-\overline{Y})}{\sum^n_{i=1}(x_i-\overline{x})^2}
+\tag{2.2}
+\end{equation}\]</span></p>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="examples.html#cb7-1" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> crime<span class="sc">$</span>Crime</span>
+<span id="cb7-2"><a href="examples.html#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> crime<span class="sc">$</span>Dropout</span>
+<span id="cb7-3"><a href="examples.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="examples.html#cb7-4" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">*</span> (Y <span class="sc">-</span> <span class="fu">mean</span>(Y)))<span class="sc">/</span><span class="fu">sum</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb7-5"><a href="examples.html#cb7-5" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="fu">mean</span>(Y) <span class="sc">-</span> b1 <span class="sc">*</span> <span class="fu">mean</span>(x)</span></code></pre></div>
+</div>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Use 1 or more predictors alongside Dropout to build a multiple linear regression model for explaining Crime.</li>
+</ol>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>Use the graph found using the <code>pairs()</code> command in a) to select predictors that appear suitable for describing Crime.</p>
+<p>Recall that a multiple linear regression model can be constructed using</p>
+<center>
+<code>model &lt;- lm(Crime ~ Dropout + Predictor1 + Predictor2 + ..., data = crime)</code>
+</center>
+</div>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>Calculate the least squares estimates of parameters using the vector-matrix formulation in the new multiple linear regression model.</li>
+</ol>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>The same steps can be followed as in c), but the design matrix <code>X</code> has to be updated accordingly. Say we want to add <code>Police</code> and <code>Prison</code> variables to our model. We would then use the following code.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="examples.html#cb8-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(<span class="sc">~</span> Dropout <span class="sc">+</span> Police <span class="sc">+</span> Prison, <span class="at">data =</span> crime)</span>
+<span id="cb8-2"><a href="examples.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="examples.html#cb8-3" aria-hidden="true" tabindex="-1"></a>XtX <span class="ot">&lt;-</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> X</span>
+<span id="cb8-4"><a href="examples.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="examples.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The inverse of XtX can be found by using solve(XtX)</span></span>
+<span id="cb8-6"><a href="examples.html#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="examples.html#cb8-7" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> crime<span class="sc">$</span>Crime</span>
+<span id="cb8-8"><a href="examples.html#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="examples.html#cb8-9" aria-hidden="true" tabindex="-1"></a>XtY <span class="ot">&lt;-</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> Y</span>
+<span id="cb8-10"><a href="examples.html#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="examples.html#cb8-11" aria-hidden="true" tabindex="-1"></a>beta.hat <span class="ot">&lt;-</span> <span class="fu">solve</span>(XtX) <span class="sc">%*%</span> XtY</span>
+<span id="cb8-12"><a href="examples.html#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="examples.html#cb8-13" aria-hidden="true" tabindex="-1"></a>beta.hat</span></code></pre></div>
+<pre><code>##                    [,1]
+## (Intercept) 1513.317509
+## Dropout      148.343452
+## Police         4.782505
+## Prison         2.794514</code></pre>
+</div>
+</div>
+<div id="twopointtwo" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Example 2 - <code>phys</code> dataset<a href="examples.html#twopointtwo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recall Example 1 from <strong>Practical 1</strong> in which volunteers had their power output (in watts), weight, and leg
+length measurements recorded. Here we would like to assess the strength of the relationship, if any, between <em>Power Output</em> and <em>Weight</em>,
+which we explored in scatterplots in the previous practical, displayed in Figure 1. We are going to do this
+for male and female volunteers separately, such that we assess the statistical significance of the observed
+correlation between these two variables in the wider populations of (i) males and (ii) females.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig1"></span>
+<img src="main_files/figure-html/fig1-1.png" alt="Scatterplot of Power Output versus Weight." width="672" />
+<p class="caption">
+Figure 2.1: Scatterplot of Power Output versus Weight.
+</p>
+</div>
+<p>Firstly, we subset the data for males and females. One way to do this is:</p>
+<center>
+<code>physM &lt;- subset(phys, Gender == "Male", data = phys)</code>
+</center>
+<center>
+<code>physF &lt;- subset(phys, Gender == "Female", data = phys)</code>
+</center>
+<p>We now perform, separately for males and females, the following hypothesis test:</p>
+<center>
+<span class="math inline">\(H_0: \rho=0\)</span> vs. <span class="math inline">\(H_1:\rho \ne 0\)</span>
+</center>
+<p>We test the null hypothesis, <span class="math inline">\(H_0\)</span>, that is, that in the population of males/females the correlation between
+<em>Power Output</em> and <em>Weight</em> is 0 against the alternative hypothesis, <span class="math inline">\(H_1\)</span>, that the correlation is not equal to 0.</p>
+<p>To compute the sample correlation coefficient, <span class="math inline">\(r\)</span>, and perform our hypothesis test, we use the <code>cor.test</code>
+command. For the males data, the command is as follows:</p>
+<center>
+<code>cor.test(physM$Power1, physM$Weight)</code>
+</center>
+<p>Note: in the <code>cor.test</code> command the $ notation is required to access the variables from the subsetted data.</p>
+<p>The hypothesis test produces a <em>p</em>-value, where we reject the null hypothesis, <span class="math inline">\(H_0\)</span>, for small values of the
+<em>p</em>-value (typically <em>p</em>-values &lt; 0.05). It also produces a 95% confidence interval for a range of plausible
+values for the true population correlation.</p>
+<p>What is the sample correlation coefficient for the males data? <input class='webex-solveme nospaces' size='6' data-answer='["0.8136"]'/> <em>(to 4 decimal places)</em></p>
+<p>What is the <em>p</em>-value for the test? <input class='webex-solveme nospaces' size='8' data-answer='["0.000224"]'/> <em>(to 6 decimal places)</em></p>
+<p>The sample correlation coefficient tells us that <em>Power Output</em> and <em>Weight</em> have a <select class='webex-select'><option value='blank'></option><option value=''>weak</option><option value='answer'>strong</option></select>, <select class='webex-select'><option value='blank'></option><option value=''>negative</option><option value='answer'>positive</option></select> relationship.</p>
+<p>Based on the p-value of the test, we would <select class='webex-select'><option value='blank'></option><option value='answer'>reject the null hypothesis</option><option value=''>fail to reject the null hypothesis</option></select>.</p>
+<p>Perform the same test on the Female data.</p>
+<p>What is the sample correlation coefficient for the females data? <input class='webex-solveme nospaces' size='6' data-answer='["0.3664"]'/> <em>(to 4 decimal places)</em></p>
+<p>What is the <em>p</em>-value for the test? <input class='webex-solveme nospaces' size='6' data-answer='["0.1791"]'/> <em>(to 4 decimal places)</em></p>
+<p>The sample correlation coefficient tells us that <em>Power Output</em> and <em>Weight</em> have a <select class='webex-select'><option value='blank'></option><option value='answer'>weak</option><option value=''>strong</option></select>, <select class='webex-select'><option value='blank'></option><option value=''>negative</option><option value='answer'>positive</option></select> relationship.</p>
+<p>Based on the p-value of the test, we would <select class='webex-select'><option value='blank'></option><option value=''>reject the null hypothesis</option><option value='answer'>fail to reject the null hypothesis</option></select>.</p>
+<p>Note: if we do not subset the data by gender, we obtain a sample correlation coefficient <span class="math inline">\(r = 0.89\)</span>, with a <em>p</em>-value <span class="math inline">\(\lt\)</span> 0.05, and thus we would conclude that there is a strong, positive linear relationship between Power Output and Weight. However, we now know that is not the case for females.</p>
+</div>
+<div id="calculating-the-correlation-by-hand" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Calculating the correlation by hand<a href="examples.html#calculating-the-correlation-by-hand" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To compute the sample correlation coefficient, r, the command cor.test uses the formula given in <a href="index.html#eq:eq2">(1.2)</a>.
+To check that the cor.test command is ‘correct’, we can ourselves calculate the correlation directly
+using the following commands:</p>
+<center>
+<code>var # computes the variance of a given vector</code>
+</center>
+<center>
+<code>cov # computes the covariance between the vectors x and y</code>
+</center>
+<center>
+<code>sum # returns the sum of the values given</code>
+</center>
+<center>
+<code>mean # computes the mean of a given vector</code>
+</center>
+<center>
+<code>sqrt # computes the square-root of a given vector</code>
+</center>
+<p>Give your answers to 3 decimal places where required.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Using the commands <code>var</code> and <code>cov</code>, compute the variance and covariance given in <a href="index.html#eq:eq1">(1.1)</a> for the males
+data, where <em>Y</em> denotes the response variable <em>Power Output</em>, and <em>X</em> denotes the explanatory variable
+<em>Weight</em>.</li>
+</ol>
+<p>The variance of the explanatory variable <em>Weight</em> is <input class='webex-solveme nospaces' size='6' data-answer='["47.374"]'/>.
+The variance of the response variable <em>Power Output</em> is <input class='webex-solveme nospaces' size='8' data-answer='["25435.39"]'/>.
+The covariance of the response and explanatory variables is <input class='webex-solveme nospaces' size='7' data-answer='["893.147"]'/>.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="examples.html#cb10-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> physM<span class="sc">$</span>Weight</span>
+<span id="cb10-2"><a href="examples.html#cb10-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> physM<span class="sc">$</span>Power1</span>
+<span id="cb10-3"><a href="examples.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="examples.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X)</span></code></pre></div>
+<pre><code>## [1] 47.37381</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="examples.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Y)</span></code></pre></div>
+<pre><code>## [1] 25435.39</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="examples.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(X, Y)</span></code></pre></div>
+<pre><code>## [1] 893.1468</code></pre>
+</div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Using the variance and covariance obtained in (a), and the square-root command, <code>sqrt</code>, compute the
+sample correlation coefficient using the formula given in <a href="index.html#eq:eq1">(1.1)</a> for the males data. Does this match what
+was obtained using the <code>cor.test</code> command?</li>
+</ol>
+<p>The sample correlation coefficient using the variance and covariance obtained in (a) is <input class='webex-solveme nospaces' size='5' data-answer='["0.814",".814"]'/>.</p>
+<p>This <select class='webex-select'><option value='blank'></option><option value='answer'>matches</option><option value=''>does not match</option></select> the sample correlation coefficient found using <code>cor.test</code>.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="examples.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(X, Y)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">var</span>(X)<span class="sc">*</span><span class="fu">var</span>(Y))</span></code></pre></div>
+<pre><code>## [1] 0.8136441</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="examples.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(physM<span class="sc">$</span>Weight, physM<span class="sc">$</span>Power1)<span class="sc">$</span>estimate</span></code></pre></div>
+<pre><code>##       cor 
+## 0.8136441</code></pre>
+</div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Use the <code>mean</code>, <code>sum</code>, and <code>sqrt</code> commands to compute the sum of squares, <span class="math inline">\(S_{xx}\)</span> and <span class="math inline">\(S_{yy}\)</span>, and the sum
+of products, <span class="math inline">\(S_{xy}\)</span>, given in formula <a href="index.html#eq:eq2">(1.2)</a> for the males data.</li>
+</ol>
+<p>Give your answers to 3 decimal places where required.</p>
+<p><span class="math inline">\(S_{xx}\)</span>: <input class='webex-solveme nospaces' size='7' data-answer='["663.233"]'/></p>
+<p><span class="math inline">\(S_{yy}\)</span>: <input class='webex-solveme nospaces' size='8' data-answer='["356095.5"]'/></p>
+<p><span class="math inline">\(S_{xy}\)</span>: <input class='webex-solveme nospaces' size='8' data-answer='["12504.06"]'/></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="examples.html#cb20-1" aria-hidden="true" tabindex="-1"></a>Sxx <span class="ot">&lt;-</span> <span class="fu">sum</span>((X<span class="sc">-</span><span class="fu">mean</span>(X))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb20-2"><a href="examples.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="examples.html#cb20-3" aria-hidden="true" tabindex="-1"></a>Syy <span class="ot">&lt;-</span> <span class="fu">sum</span>((Y<span class="sc">-</span><span class="fu">mean</span>(Y))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb20-4"><a href="examples.html#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="examples.html#cb20-5" aria-hidden="true" tabindex="-1"></a>Sxy <span class="ot">&lt;-</span> <span class="fu">sum</span>((X<span class="sc">-</span><span class="fu">mean</span>(x))<span class="sc">*</span>(Y<span class="sc">-</span><span class="fu">mean</span>(Y)))</span>
+<span id="cb20-6"><a href="examples.html#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="examples.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Sxx, Syy, Sxy)</span></code></pre></div>
+<pre><code>## [1]    663.2333 356095.4916  12504.0557</code></pre>
+</div>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Use the sum of squares and sum of products obtained in (c) to compute the sample correlation coefficient, <span class="math inline">\(r\)</span>, using formula <a href="index.html#eq:eq2">(1.2)</a> for the males data. Does this match your answers from (b) and the <code>cor.test</code> command?</li>
+</ol>
+<p>The sample correlation coefficient found using the sum of squares and sum of products above is <input class='webex-solveme nospaces' size='5' data-answer='["0.814",".814"]'/>, which is <select class='webex-select'><option value='blank'></option><option value=''>not the same</option><option value='answer'>the same</option></select> as the value found when using <code>cor.test</code>.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="examples.html#cb22-1" aria-hidden="true" tabindex="-1"></a>Sxy<span class="sc">/</span><span class="fu">sqrt</span>(Sxx<span class="sc">*</span>Syy)</span></code></pre></div>
+<pre><code>## [1] 0.8136441</code></pre>
+</div>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["main.pdf", "main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

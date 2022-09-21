@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Part 1 Intro to R and RStudio  | S1Y Lab 1</title>
+  <meta name="description" content="Part 1 Intro to R and RStudio  | S1Y Lab 1" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Part 1 Intro to R and RStudio  | S1Y Lab 1" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Part 1 Intro to R and RStudio  | S1Y Lab 1" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="exercises.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S1Y Lab 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ilo-intro"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-r-rstudio"><i class="fa fa-check"></i><b>1.2</b> R and RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.3</b> Credit where credit is due</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><i class="fa fa-check"></i>Part 1 Intro to R and RStudio <img src="images/R-Logo1.png" style="width:10.0%" alt="The R logo" /> <img src="images/RStudio.jpg" style="width:10.0%" alt="The RStudio logo" /></a>
+<ul>
+<li class="chapter" data-level="" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#intended-learning-outcomes-ilo-intro"><i class="fa fa-check"></i>Intended Learning Outcomes {#ilo-intro}</a></li>
+<li class="chapter" data-level="" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#r-and-rstudio-intro-r-rstudio"><i class="fa fa-check"></i>R and RStudio {#intro-r-rstudio}</a>
+<ul>
+<li class="chapter" data-level="1.3.2" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3.2</b> RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#packages"><i class="fa fa-check"></i><b>1.4</b> Packages and functions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#install-package"><i class="fa fa-check"></i><b>1.4.1</b> Installing a package</a></li>
+<li class="chapter" data-level="1.4.2" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#loading-a-package"><i class="fa fa-check"></i><b>1.4.2</b> Loading a package</a></li>
+<li class="chapter" data-level="1.4.3" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#using-a-function"><i class="fa fa-check"></i><b>1.4.3</b> Using a function</a></li>
+<li class="chapter" data-level="1.4.4" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#tidyverse"><i class="fa fa-check"></i><b>1.4.4</b> Tidyverse</a></li>
+<li class="chapter" data-level="1.4.5" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#function-help"><i class="fa fa-check"></i><b>1.4.5</b> Function Help</a></li>
+<li class="chapter" data-level="1.4.6" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#arguments"><i class="fa fa-check"></i><b>1.4.6</b> Arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#hello-bookdown"><i class="fa fa-check"></i><b>1.5</b> Hello bookdown</a></li>
+<li class="chapter" data-level="1.6" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#a-section"><i class="fa fa-check"></i><b>1.6</b> A section</a>
+<ul>
+<li class="chapter" data-level="" data-path="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>2</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exercises.html"><a href="exercises.html#exercise-1---cheese-dataset"><i class="fa fa-check"></i><b>2.1</b> Exercise 1 - <code>cheese</code> dataset</a></li>
+<li class="chapter" data-level="2.2" data-path="exercises.html"><a href="exercises.html#exercise-2---nicholas-cage-data"><i class="fa fa-check"></i><b>2.2</b> Exercise 2 - Nicholas Cage data</a></li>
+<li class="chapter" data-level="2.3" data-path="exercises.html"><a href="exercises.html#exercise-3---context-identifying-relationships"><i class="fa fa-check"></i><b>2.3</b> Exercise 3 - Context: identifying relationships</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S1Y Lab 1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo" class="section level1 unnumbered hasAnchor">
+<h1>Part 1 Intro to R and RStudio <img src="images/R-Logo1.png" style="width:10.0%" alt="The R logo" /> <img src="images/RStudio.jpg" style="width:10.0%" alt="The RStudio logo" /><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- ```{r img-rrstudio, echo=FALSE, out.width = "10%", fig.cap="The R and RStudio logos"} -->
+<!-- knitr::include_graphics("images/R-Logo1.png") -->
+<!-- knitr::include_graphics("images/RStudio.jpg") -->
+<!-- ``` -->
+<div id="intended-learning-outcomes-ilo-intro" class="section level2 unnumbered hasAnchor">
+<h2>Intended Learning Outcomes {#ilo-intro}<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#intended-learning-outcomes-ilo-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Be introduced to R and RStudio</li>
+<li>Be able to load add-on packages</li>
+<li>Be able to get help for packages and functions</li>
+<li>Be able to create objects by writing and running code in the console</li>
+</ul>
+</div>
+<div id="r-and-rstudio-intro-r-rstudio" class="section level2 unnumbered hasAnchor">
+<h2>R and RStudio {#intro-r-rstudio}<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#r-and-rstudio-intro-r-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R is a programming language that you will write code in and RStudio is an Integrated Development Environment (IDE) which makes working in R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without RStudio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.</p>
+<div id="hello" class="greeting message" style="color: grey;">
+<div id="intro-installing-r" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> OPTIONAL: Installing R and RStudio<a href="index.html#intro-installing-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You <strong>DO NOT</strong> need to intal R or RStudio on your own laptop or desktop computer. You are expected to complete these labs on the universities PCs, and these already have R and RStudio installed. However, R and (basic) RStudio are free to download and install, so Lab 0 is an optional lab which has technical details on installing R and RStudio on your computer. If you already had R and/or RStudio installed, we recommend updating to the latest version before you work through this course.</p>
+</div>
+</div>
+<div id="rstudio_ide" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> RStudio<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#rstudio_ide" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) . The RStudio IDE is arranged with four window.</p>
+<div class="figure"><span style="display:block;" id="fig:img-rstudio"></span>
+<img src="images/Opened-RScript.jpg" alt="The RStudio IDE"  />
+<p class="caption">
+Figure 1.1: The RStudio IDE
+</p>
+</div>
+<p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.</p>
+<p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.</p>
+<p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the object that you have defined in your code. We'll learn more about the Help tab in Section <a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#function-help">1.4.5</a>.</p>
+<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#packages">1.4</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong>.</p>
+<!-- ### Reproducibility {#intro-reproducibility} -->
+<!-- In this class, you will be learning how to make reproducible reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results. -->
+<!-- When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to create a report every month with the social media analytics for your company, a reproducible report allows you to download a new month's data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable. -->
+<!-- ::: {.try data-latex=""} -->
+<!-- Appendix\ \@ref(rstudio-settings) shows you how to change two important settings in the global Options to increase reproducibility. Your settings should have: -->
+<!-- * Restore .RData into workspace at startup: <select class='webex-select'><option value='blank'></option><option value=''>Checked</option><option value='answer'>Not Checked</option></select> -->
+<!-- * Save workspace to .RData on exit: <select class='webex-select'><option value='blank'></option><option value=''>Always</option><option value='answer'>Never</option><option value=''>Ask</option></select> -->
+<!-- ::: -->
+<!-- ### Themes and accessiblilty -->
+<!-- You can customise how RStudio looks to make it work for you. Click `Tools` - `Global Options` - `Appearance`. You can change the default font, font size, and general appearance of RStudio, including using dark mode. Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look nice! -->
+<!-- ## Sessions {#intro-sessions} -->
+<!-- If you have the above settings configured correctly, when you open up RStudio and start writing code, loading packages, and creating objects, you will be doing so in a new session and your Environment tab should be completely empty. If you find that your code isn't working and you can't figure out why, it might be worth restarting your R session. This will clear the environment and detach all loaded packages - think of it like restarting your phone. There are several ways that you can restart R: -->
+<!-- * Menu: Session > Restart R -->
+<!-- * <span class=\"apple\">Cmd-Shift-F10</span> or <span class=\"windows\">Ctl-Shift-F10</span> -->
+<!-- * type `.rs.restartR()` in the console -->
+<!-- Try doing each of these now. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item.  -->
+</div>
+</div>
+<div id="packages" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Packages and functions<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you install R you will have access to a range of functions including options for data wrangling and statistical analysis. The functions that are included in the default installation are typically referred to as "base R" and you can think of them like the default apps that come pre-loaded on your phone.</p>
+<p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of packages that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
+<p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install an app on your smartphone. The main repository where packages reside is called CRAN, the Comprehensive R Archive Network.</p>
+<p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
+<div id="install-package" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Installing a package<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#install-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!--
+<div class="small_right"><img src="images/memes/pokemon.gif" /></div>
+-->
+<p><strong>This section on "Installing a package" is only relevant if you have R/RStudio installed on your own laptop/PC. You CANNOT install packages on the university PCs - all the packages you need are already installed. So, if you are in the lab, for example, you can skip to the next section on "Loading a package")</strong></p>
+<p>This is done using <code>install.packages()</code>. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use an app on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not <em>loaded</em>) every time you open up R.</p>
+<p>For example, to install the <code>tidyverse</code> package on your system:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type this in the console pane</span></span>
+<span id="cb1-2"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>This package is the main package we will use throughout these labs for data wrangling, summaries, and visualisation. If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful.</p>
+<!-- If you get an error and the package wasn't installed, check the troubleshooting section of Appendix\ \@ref(package-install-troubleshooting). -->
+<!-- ::: {.dangerous data-latex=""} -->
+<!-- Never install a package from inside a script. Only do this from the console pane. -->
+<!-- ::: -->
+<!-- You can also install multiple packages at once. Here is the command to install all of the packages we'll be using in the first few chapters of this class. This will take a while, so don't try this in the middle of a tutorial! -->
+<!-- ```{r install-all-packages, eval = FALSE} -->
+<!-- packages <- c( -->
+<!--   "tidyverse",  # for everything -->
+<!--   "kableExtra", # for nice tables -->
+<!--   "patchwork",  # for multi-part plots -->
+<!--   "ggthemes",   # for themed plots -->
+<!--   "rio",        # for data import/export -->
+<!--   "devtools"    # for installing github packages -->
+<!-- ) -->
+<!-- # determine which need to be installed -->
+<!-- new_packages <- packages[!packages %in% installed.packages()] -->
+<!-- install.packages(new_packages) -->
+<!-- ``` -->
+<!-- Once you have the `devtools` package, you can also install packages from repositories other than CRAN, such as github. The following code installs the development version of a package for making waffle plots. -->
+<!-- ```{r install-waffle, eval = FALSE} -->
+<!-- # install waffle package  -->
+<!-- devtools::install_github("hrbrmstr/waffle") -->
+<!-- ``` -->
+</div>
+<div id="loading-a-package" class="section level3 hasAnchor" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Loading a package<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#loading-a-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is done using the <code>library()</code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run <code>library(rio)</code> within a session, the functions in the package referred to by <code>rio</code> will be made available for your R session. The next time you start R, you will need to run <code>library(rio)</code> again if you want to access that package.</p>
+<p>For example, you can load the <code>tidyverse</code> package for your current R session as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.</p>
+<!-- ::: {.info data-latex=""} -->
+<!-- You can use the convention `package::function()` to indicate in which add-on package a function resides. For instance, if you see `readr::read_csv()`, that refers to the function `read_csv()` in the `readr` add-on package. If the package is loaded using `library()`, you don't have to specify the package name before a function unless there is a conflict (e.g., you have two packages loaded that have a function with the same name). -->
+<!-- ::: -->
+</div>
+<div id="using-a-function" class="section level3 hasAnchor" number="1.4.3">
+<h3><span class="header-section-number">1.4.3</span> Using a function<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#using-a-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!-- Now you can run the function `esquisser()`, which starts up an interactive plotting example. -->
+<!-- ```{r esquisser-demo, eval = FALSE} -->
+<!-- # type this in the console pane and press enter -->
+<!-- esquisser(data = ggplot2::diamonds) -->
+<!-- ``` -->
+<!-- ::: {.warning data-latex=""} -->
+<!-- If you see the error message: `Error in esquisser(data = ggplot2::diamonds) : could not find function "esquisser"`, that just means that you forgot to load the `esquisse` package using `library(esquisse)`. Either run the code to load the package first, or preface the function with the package name like `esquisse::esquisser()` to use it without loading the package. -->
+<!-- ::: -->
+<p>A function is a name that refers to some code you can reuse. We'll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more arguments. These are options that you can set. In the example above, the <code>data</code> argument is set to <code>ggplot2::diamonds</code>, which refers to a built-in dataset <code>diamonds</code> from the <code>ggplot2</code> package.</p>
+<p>If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a script or R Markdown document in the source pane, it won't run until you run the script, knit the R Markdown file, or run a code chunk. You'll learn more about this in Chapter <a href="#reports"><strong>??</strong></a>.</p>
+</div>
+<div id="tidyverse" class="section level3 hasAnchor" number="1.4.4">
+<h3><span class="header-section-number">1.4.4</span> Tidyverse<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>tidyverse</code> is a meta-package that loads several packages we'll be using in these labs, including:</p>
+<ul>
+<li><code>ggplot2</code>, for data visualisation (Chapter <a href="#viz"><strong>??</strong></a>)</li>
+<li><code>readr</code>, for data import (Chapter <a href="#data"><strong>??</strong></a>)
+<!-- - `tibble`, for tables (Chapter\ \@ref(data)) -->
+<!-- - `tidyr`, for data tidying (Chapter\ \@ref(tidy)) --></li>
+<li><code>dplyr</code>, for data manipulation (Chapter <a href="#wrangle"><strong>??</strong></a>)
+<!-- - `stringr`, for strings -->
+<!-- - `forcats`, for factors -->
+<!-- - `purrr`, for repeating things --></li>
+</ul>
+<!-- When you install `tidyverse`, it also installs some other useful packages that you can load individually. You can get the full list using `tidyverse_packages()`, but the packages we'll be using in this book are: -->
+<!-- - `googlesheets4`, for working with Google spreadsheets -->
+<!-- - `readxl`, for Excel files -->
+<!-- - `lubridate`, for working with dates -->
+<!-- - `hms`, for working with times -->
+<!-- - `rvest`, for web scraping -->
+</div>
+<div id="function-help" class="section level3 hasAnchor" number="1.4.5">
+<h3><span class="header-section-number">1.4.5</span> Function Help<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#function-help" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you load the <code>tidyverse</code> it automatically loads all of the above packages, however, it can be helpful to know which package a function comes from if you need to Google it. If a function is in "base R" or a loaded package, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
+<p>If the package isn't loaded, use <code>?package_name::function_name</code> or specify the package in the <code>help()</code> function. When you aren't sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if the package is loaded</span></span>
+<span id="cb3-2"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-2" aria-hidden="true" tabindex="-1"></a>?select</span>
+<span id="cb3-3"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;select&quot;</span>)</span>
+<span id="cb3-4"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># works whether or not the package is loaded</span></span>
+<span id="cb3-6"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-6" aria-hidden="true" tabindex="-1"></a>?dplyr<span class="sc">::</span>select</span>
+<span id="cb3-7"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;select&quot;</span>, <span class="at">package=</span><span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb3-8"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># shows a list of potentially matching functions</span></span>
+<span id="cb3-10"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb3-10" aria-hidden="true" tabindex="-1"></a>??select</span></code></pre></div>
+<!-- <div class="small_right" style="width: 50%; max-width: 400px;"><img src="images/intro/function_help.png" /></div> -->
+<p>Function help is always organised in the same way. For example, look at the help for <code>?dplyr::select</code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its arguments. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
+<!-- ::: {.try data-latex=""} -->
+<!-- * What is the first argument to the `mean` function? <select class='webex-select'><option value='blank'></option><option value=''>trim</option><option value=''>na.rm</option><option value=''>mean</option><option value='answer'>x</option></select> -->
+<!-- * What package is `read_excel` in? <select class='webex-select'><option value='blank'></option><option value=''>readr</option><option value='answer'>readxl</option><option value=''>base</option><option value=''>stats</option></select> -->
+<!-- ::: -->
+</div>
+<div id="arguments" class="section level3 hasAnchor" number="1.4.6">
+<h3><span class="header-section-number">1.4.6</span> Arguments<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#arguments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
+<p>As an example, look at the help documentation for the function <code>sample()</code> which randomly samples items from a list.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb4-1" aria-hidden="true" tabindex="-1"></a>?sample</span></code></pre></div>
+<p>The help documentation for <code>sample()</code> should appear in the bottom right help panel. In the usage section, we see that <code>sample()</code> takes the following form:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(x, size, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<p>In the arguments section, there are explanations for each of the arguments. <code>x</code> is the list of items we want to choose from, <code>size</code> is the number of items we want to choose, <code>replace</code> is whether or not each item may be selected more than once, and <code>prob</code> gives the probability that each item is chosen. In the details section it notes that if no values are entered for <code>replace</code> or <code>prob</code> it will use defaults of <code>FALSE</code> (each item can only be chosen once) and <code>NULL</code> (all items will have equal probability of being chosen). Because there is no default value for <code>x</code> or <code>size</code>, they must be specified otherwise the code won't run.</p>
+<p>Let's try an example and just change the required arguments to <code>x</code> and <code>size</code> to ask R to choose 5 random letters (<code>letters</code> is a built-in vector of the 26 lower-case Latin letters).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> letters, <span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;z&quot; &quot;v&quot; &quot;y&quot; &quot;w&quot; &quot;j&quot;</code></pre>
+<div class="webex-solution">
+<button>
+Why are my letters different to your letters?
+</button>
+<p><code>sample()</code> generates a random sample. Each time you run the code, you'll generate a different set of random letters (try it). The function <code>set.seed()</code> controls the random number generator - if you're using any functions that use randomness (such as <code>sample()</code>), running <code>set.seed()</code> will ensure that you get the same result (in many cases this may not be what you want to do). To get the same numbers we do, run <code>set.seed(1242016)</code> in the console, and then run <code>sample(x = letters, size = 5)</code> again.</p>
+</div>
+<p>Now we can change the default value for the <code>replace</code> argument to produce a set of letters that is allowed to have duplicates.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>)</span>
+<span id="cb8-2"><a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> letters, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;t&quot; &quot;k&quot; &quot;j&quot; &quot;k&quot; &quot;m&quot;</code></pre>
+<p>This time R has still produced 5 random letters, but now this set of letters has two instances of "k". Always remember to use the help documentation to help you understand what arguments a function requires.</p>
+</div>
+</div>
+<div id="hello-bookdown" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Hello bookdown<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+</div>
+<div id="a-section" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> A section<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#a-section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
+<div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
+<h3>An unnumbered section<a href="part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
+
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+    
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+  
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+  
+  var cl = this.classList
+  
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+  
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+  
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+  
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+  
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["main.pdf", "main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>
