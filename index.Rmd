@@ -1,5 +1,5 @@
 ---
-title: "S1Y Lab 1 Test"
+title: "S1Y Lab 1"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -37,7 +37,7 @@ set.seed(12042016)
 * Be introduced to R and RStudio
 * Be able to load add-on packages
 * Be able to get help for packages and functions
-* Be able to create objects by writing and running code in the console
+* Be able to create objects by writing and running R code
 
 
 ## R and RStudio {#intro-r-rstudio}
