@@ -1,5 +1,5 @@
 ---
-title: "S1Y Lab 1"
+title: "S1Y Lab 1 Test"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
