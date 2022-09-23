@@ -47,7 +47,7 @@ R is a programming language that you will write code in and RStudio is an Integr
 <div id="hello" class="greeting message" style="color: grey;">
 ### OPTIONAL: Installing R and RStudio {#intro-installing-r}
 
-You **DO NOT** need to intall R or RStudio on your own laptop or desktop computer.  You are expected to complete these labs on the universities PCs, and these already have R and RStudio installed.  However, R and (basic) RStudio are free to download and install, so Lab 0 is an optional lab which has technical details on installing R and RStudio on your computer. If you already had R and/or RStudio installed, we recommend updating to the latest version before you work through this course. 
+You **DO NOT** need to intall R or RStudio on your own laptop or desktop computer.  You are expected to complete these labs on the universities PCs, and these already have R and RStudio installed.  However, R and (basic) RStudio are free to download and install, so there is a document on the Moodle page with technical details on installing R and RStudio on your computer. If you already had R and/or RStudio installed, we recommend updating to the latest version before you work through this course. 
 </div>
 
 ## RStudio {#rstudio_ide}
