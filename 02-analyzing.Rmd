@@ -19,19 +19,30 @@
 knitr::include_graphics("images/GBBO_1.png")
 #knitr::include_graphics("images/GBBO_2.png")
 
-ratings <- read_csv('ratings_seasons.csv')
+ratings <- read.csv('ratings_seasons.csv')
 ```
 
 The data set we will be looking at in this section refers to TV competition ["Great British Bake Off"](https://en.wikipedia.org/wiki/The_Great_British_Bake_Off) (often abbreviated to "Bake Off" or "GBBO").  Within each series, a group of amateur bakers compete against each other in a series of episodes, attempting to impress a group of judges with their baking skills. One contestant is eliminated in each episode, and the winner is selected from the contestants who reach the final. The first episode was aired on 17 August 2010, with its first four series broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.
 
 ### Reading data in
 
-The file `ratings_seasons.csv` contains data on the first 10 series (2010-2019).   Open a script in RStudio (perhaps call it `S1Y_Lab_1.R`) and paste and run this code to read the data into RStudio
+The text file `ratings_seasons.csv` contains data on the first 10 series (2010-2019) of GBBO.   The file is on the Moodle page below the link to this lab.  When you click on it, it will download automatically to a local folder, probably the `Downloads` folder.  Find where it is saved (e.g. use the `Show in folder` option when you click on the options next to the filename at the bottom of your browser) and move it to the **same folder** as you saved (or will save) the script file with the code to analyse this data.  
+
+Then open/go to the script file in RStudio (perhaps call it `S1Y_Lab_1.R` if you haven't already) and paste and run this code to read the data in the file `ratings_seasons.csv` into RStudio.
 
 ```{r data, eval = FALSE, warning=FALSE, message=FALSE}
-ratings <- read_csv('ratings_seasons.csv')
+ratings <- read.csv('ratings_seasons.csv')
 ```
 
+`r hide("Optional: other ways of locating data")`
+
+You can tell RStudio where (in what directory on your computer) to find the data set. To do this select
+
+`> Session > Set Working Directory > Choose Directory…`
+
+and specify the location where the file you want to read in is.
+
+`r unhide()`
 
 ### Looking at data
 
@@ -167,7 +178,14 @@ opts_1var <- sample(c(
 knitr::include_graphics("images/dplyr_sum_mut_sel_fil.jpg")
 ```
 
-We're now going to use some key functions in the `dplyr` package (part of the `tidyverse`) to "wrangle" data
+We're now going to use some key functions in the `dplyr` package (part of the `tidyverse`) to "wrangle" data.
+
+If you haven't already, load the `tidyverse` package by copying and running this code in your script file:
+
+```{r library-pckg2, eval=FALSE}
+library(tidyverse)
+```
+
 
 ### Creating a new variable and adding it to a data object
 
@@ -199,11 +217,11 @@ str(ratings)
 
 The values just after the ":" tells us the type of each variable
 
-- `num`  stands for **numeric** variable
-- `Date` stands for a type of variable that can handle calendar dates
+- `int`  stands for **integer** which is a **numeric** variable
 - `chr`  stands for 'character' which usually represents a **categorical** variable
+<!-- - `Date` stands for a type of variable that can handle calendar dates -->
 
-Because numbers (e.g. the values that `series` takes, i.e. 1, 2, 3, ...) can also represent 'categories' or 'levels' of a categorical variable, R doesn't assume that just because a variable is of type `chr` that it is categorical.  To specify a **categorical** variable in R we use the `as.factor()` function, since R calls categorical variables "factors". In the `ratings` data at least the three variable `series`, `episode` and `channel` are categorical variables but they aren't stored as such, yet!
+Because numbers (e.g. the values that `series` takes, i.e. 1, 2, 3, ...) can also represent 'categories' or 'levels' of a categorical variable, R doesn't assume that just because a variable is of type `chr` that it is categorical.  To specify a **categorical** variable in R we use the `as.factor()` function, since R calls categorical variables "factors". In the `ratings` data the three variables `series`, `episode` and `channel` are categorical variables but they aren't stored as such, yet!
 
 To tell R that variables are factors (i.e. categorical) use `mutate()` to overriding the original variable with the same data but classified as a factor. 
 

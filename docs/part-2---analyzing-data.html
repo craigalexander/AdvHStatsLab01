@@ -250,8 +250,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The data set we will be looking at in this section refers to TV competition <a href="https://en.wikipedia.org/wiki/The_Great_British_Bake_Off">"Great British Bake Off"</a> (often abbreviated to "Bake Off" or "GBBO"). Within each series, a group of amateur bakers compete against each other in a series of episodes, attempting to impress a group of judges with their baking skills. One contestant is eliminated in each episode, and the winner is selected from the contestants who reach the final. The first episode was aired on 17 August 2010, with its first four series broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.</p>
 <div id="reading-data-in" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Reading data in<a href="part-2---analyzing-data.html#reading-data-in" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The file <code>ratings_seasons.csv</code> contains data on the first 10 series (2010-2019). Open a script in RStudio (perhaps call it <code>S1Y_Lab_1.R</code>) and paste and run this code to read the data into RStudio</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-2---analyzing-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ratings_seasons.csv&#39;</span>)</span></code></pre></div>
+<p>The text file <code>ratings_seasons.csv</code> contains data on the first 10 series (2010-2019) of GBBO. The file is on the Moodle page below the link to this lab. When you click on it, it will download automatically to a local folder, probably the <code>Downloads</code> folder. Find where it is saved (e.g. use the <code>Show in folder</code> option when you click on the options next to the filename at the bottom of your browser) and move it to the <strong>same folder</strong> as you saved (or will save) the script file with the code to analyse this data.</p>
+<p>Then open/go to the script file in RStudio (perhaps call it <code>S1Y_Lab_1.R</code> if you haven't already) and paste and run this code to read the data in the file <code>ratings_seasons.csv</code> into RStudio.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-2---analyzing-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;ratings_seasons.csv&#39;</span>)</span></code></pre></div>
+<div class="webex-solution">
+<button>
+Optional: other ways of locating data
+</button>
+<p>You can tell RStudio where (in what directory on your computer) to find the data set. To do this select</p>
+<p><code>&gt; Session &gt; Set Working Directory &gt; Choose Directory…</code></p>
+<p>and specify the location where the file you want to read in is.</p>
+</div>
 </div>
 <div id="looking-at-data" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Looking at data<a href="part-2---analyzing-data.html#looking-at-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -275,18 +284,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong><code>str()</code></strong></p>
 <p>The funciton <code>str()</code> (short for "structure") shows the number of observations and variables and the datatype of those variables, e.g. "num" for an number, "chr" for a character string (and a lot more information that we don't need to know about!)</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="part-2---analyzing-data.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings, <span class="at">give.attr=</span><span class="cn">FALSE</span>)  <span class="co">#The argument give.attr=FALSE surpresses extra info  </span></span></code></pre></div>
-<pre><code>## spec_tbl_df [94 x 11] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
-##  $ series              : num [1:94] 1 1 1 1 1 1 2 2 2 2 ...
-##  $ episode             : num [1:94] 1 2 3 4 5 6 1 2 3 4 ...
-##  $ uk_airdate          : Date[1:94], format: &quot;2010-08-17&quot; &quot;2010-08-24&quot; ...
-##  $ viewers_7day        : num [1:94] 2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
-##  $ viewers_28day       : num [1:94] 7 3 2 4 1 1 2 2 1 1 ...
-##  $ network_rank        : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ channels_rank       : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ bbc_iplayer_requests: num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ episode_count       : num [1:94] 1 2 3 4 5 6 7 8 9 10 ...
-##  $ us_season           : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ us_airdate          : chr [1:94] NA NA NA NA ...</code></pre>
+<pre><code>## &#39;data.frame&#39;:    94 obs. of  11 variables:
+##  $ series              : int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ episode             : int  1 2 3 4 5 6 1 2 3 4 ...
+##  $ uk_airdate          : chr  &quot;2010-08-17&quot; &quot;2010-08-24&quot; &quot;2010-08-31&quot; &quot;2010-09-07&quot; ...
+##  $ viewers_7day        : num  2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
+##  $ viewers_28day       : num  7 3 2 4 1 1 2 2 1 1 ...
+##  $ network_rank        : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ channels_rank       : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ bbc_iplayer_requests: int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ episode_count       : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ us_season           : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ us_airdate          : chr  NA NA NA NA ...</code></pre>
 <div class="webex-solution">
 <button>
 Optional: other ways of looking at data
@@ -298,35 +307,36 @@ Optional: other ways of looking at data
 <li><code>head()</code>: shows the first 6 lines of the first few variables</li>
 </ul>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="part-2---analyzing-data.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ratings)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 11
-##   series episode uk_airdate viewers_7day viewe~1 netwo~2 chann~3 bbc_i~4 episo~5
-##    &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1      1       1 2010-08-17         2.24       7      NA      NA      NA       1
-## 2      1       2 2010-08-24         3          3      NA      NA      NA       2
-## 3      1       3 2010-08-31         3          2      NA      NA      NA       3
-## 4      1       4 2010-09-07         2.6        4      NA      NA      NA       4
-## 5      1       5 2010-09-14         3.03       1      NA      NA      NA       5
-## 6      1       6 2010-09-21         2.75       1      NA      NA      NA       6
-## # ... with 2 more variables: us_season &lt;dbl&gt;, us_airdate &lt;chr&gt;, and abbreviated
-## #   variable names 1: viewers_28day, 2: network_rank, 3: channels_rank,
-## #   4: bbc_iplayer_requests, 5: episode_count
-## # i Use `colnames()` to see all variable names</code></pre>
+<pre><code>##   series episode uk_airdate viewers_7day viewers_28day network_rank
+## 1      1       1 2010-08-17         2.24             7           NA
+## 2      1       2 2010-08-24         3.00             3           NA
+## 3      1       3 2010-08-31         3.00             2           NA
+## 4      1       4 2010-09-07         2.60             4           NA
+## 5      1       5 2010-09-14         3.03             1           NA
+## 6      1       6 2010-09-21         2.75             1           NA
+##   channels_rank bbc_iplayer_requests episode_count us_season us_airdate
+## 1            NA                   NA             1        NA       &lt;NA&gt;
+## 2            NA                   NA             2        NA       &lt;NA&gt;
+## 3            NA                   NA             3        NA       &lt;NA&gt;
+## 4            NA                   NA             4        NA       &lt;NA&gt;
+## 5            NA                   NA             5        NA       &lt;NA&gt;
+## 6            NA                   NA             6        NA       &lt;NA&gt;</code></pre>
 <ul>
 <li><code>glimpse()</code>: gives a sideways version of the data. This is useful if the data is very wide (i.e. has lots of variables) and you can't easily see all of the columns/variables. It also tells you the data type of each column/variable in angled brackets after each column/variable name.</li>
 </ul>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="part-2---analyzing-data.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ratings)</span></code></pre></div>
 <pre><code>## Rows: 94
 ## Columns: 11
-## $ series               &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3~
-## $ episode              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3~
-## $ uk_airdate           &lt;date&gt; 2010-08-17, 2010-08-24, 2010-08-31, 2010-09-07, ~
+## $ series               &lt;int&gt; 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3~
+## $ episode              &lt;int&gt; 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3~
+## $ uk_airdate           &lt;chr&gt; &quot;2010-08-17&quot;, &quot;2010-08-24&quot;, &quot;2010-08-31&quot;, &quot;2010-0~
 ## $ viewers_7day         &lt;dbl&gt; 2.24, 3.00, 3.00, 2.60, 3.03, 2.75, 3.10, 3.53, 3~
 ## $ viewers_28day        &lt;dbl&gt; 7, 3, 2, 4, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1~
-## $ network_rank         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ channels_rank        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ bbc_iplayer_requests &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ episode_count        &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15~
-## $ us_season            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ network_rank         &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ channels_rank        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ bbc_iplayer_requests &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ episode_count        &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15~
+## $ us_season            &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
 ## $ us_airdate           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~</code></pre>
 </div>
 <p>By using any of the methods described above, answer these questions:</p>
@@ -375,64 +385,66 @@ Optional: other ways of looking at data
 <div id="dplyr-functions-for-data-wrangling" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> <code>dplyr</code> functions for data wrangling<a href="part-2---analyzing-data.html#dplyr-functions-for-data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="images/dplyr_sum_mut_sel_fil.jpg" width="50%" /></p>
-<p>We're now going to use some key functions in the <code>dplyr</code> package (part of the <code>tidyverse</code>) to "wrangle" data</p>
+<p>We're now going to use some key functions in the <code>dplyr</code> package (part of the <code>tidyverse</code>) to "wrangle" data.</p>
+<p>If you haven't already, load the <code>tidyverse</code> package by copying and running this code in your script file:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-2---analyzing-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="creating-a-new-variable-and-adding-it-to-a-data-object" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Creating a new variable and adding it to a data object<a href="part-2---analyzing-data.html#creating-a-new-variable-and-adding-it-to-a-data-object" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Not all the information we need is necessarily included in the data. For example, in the introduction to the GBBO data we were told the "first four series [were] broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.". We can add this information to the <code>ratings</code> data as another variable/column in the <code>ratings</code> data.</p>
 <ul>
 <li><strong>Run this code to create a new variable <code>channel</code> in the <code>ratings</code> data and to check that it as we intended:</strong></li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-2---analyzing-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ratings, <span class="at">channel =</span> <span class="fu">case_when</span>(series <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">&quot;BBC2&quot;</span>,</span>
-<span id="cb29-2"><a href="part-2---analyzing-data.html#cb29-2" aria-hidden="true" tabindex="-1"></a>                                                series <span class="sc">&gt;</span> <span class="dv">4</span> <span class="sc">&amp;</span> series <span class="sc">&lt;</span><span class="dv">8</span> <span class="sc">~</span> <span class="st">&quot;BBC1&quot;</span>,</span>
-<span id="cb29-3"><a href="part-2---analyzing-data.html#cb29-3" aria-hidden="true" tabindex="-1"></a>                                                series <span class="sc">&gt;</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;C4&quot;</span>))</span>
-<span id="cb29-4"><a href="part-2---analyzing-data.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="part-2---analyzing-data.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">select</span>(ratings, series, channel), <span class="at">n=</span><span class="fu">nrow</span>(ratings))</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="part-2---analyzing-data.html#cb30-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ratings, <span class="at">channel =</span> <span class="fu">case_when</span>(series <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">&quot;BBC2&quot;</span>,</span>
+<span id="cb30-2"><a href="part-2---analyzing-data.html#cb30-2" aria-hidden="true" tabindex="-1"></a>                                                series <span class="sc">&gt;</span> <span class="dv">4</span> <span class="sc">&amp;</span> series <span class="sc">&lt;</span><span class="dv">8</span> <span class="sc">~</span> <span class="st">&quot;BBC1&quot;</span>,</span>
+<span id="cb30-3"><a href="part-2---analyzing-data.html#cb30-3" aria-hidden="true" tabindex="-1"></a>                                                series <span class="sc">&gt;</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;C4&quot;</span>))</span>
+<span id="cb30-4"><a href="part-2---analyzing-data.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="part-2---analyzing-data.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">select</span>(ratings, series, channel), <span class="at">n=</span><span class="fu">nrow</span>(ratings))</span></code></pre></div>
 <p>Before we proceed to creating summarisies of variables we need to pause and think about two types of variables: <strong>numeric</strong> and <strong>categorical</strong>.</p>
 <ul>
 <li>**Run this code again to see the variables (including the one we've just added) in <code>ratings</code></li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="part-2---analyzing-data.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings)</span></code></pre></div>
-<pre><code>## tibble [94 x 12] (S3: tbl_df/tbl/data.frame)
-##  $ series              : num [1:94] 1 1 1 1 1 1 2 2 2 2 ...
-##  $ episode             : num [1:94] 1 2 3 4 5 6 1 2 3 4 ...
-##  $ uk_airdate          : Date[1:94], format: &quot;2010-08-17&quot; &quot;2010-08-24&quot; ...
-##  $ viewers_7day        : num [1:94] 2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
-##  $ viewers_28day       : num [1:94] 7 3 2 4 1 1 2 2 1 1 ...
-##  $ network_rank        : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ channels_rank       : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ bbc_iplayer_requests: num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ episode_count       : num [1:94] 1 2 3 4 5 6 7 8 9 10 ...
-##  $ us_season           : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ us_airdate          : chr [1:94] NA NA NA NA ...
-##  $ channel             : chr [1:94] &quot;BBC2&quot; &quot;BBC2&quot; &quot;BBC2&quot; &quot;BBC2&quot; ...</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="part-2---analyzing-data.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    94 obs. of  12 variables:
+##  $ series              : int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ episode             : int  1 2 3 4 5 6 1 2 3 4 ...
+##  $ uk_airdate          : chr  &quot;2010-08-17&quot; &quot;2010-08-24&quot; &quot;2010-08-31&quot; &quot;2010-09-07&quot; ...
+##  $ viewers_7day        : num  2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
+##  $ viewers_28day       : num  7 3 2 4 1 1 2 2 1 1 ...
+##  $ network_rank        : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ channels_rank       : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ bbc_iplayer_requests: int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ episode_count       : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ us_season           : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ us_airdate          : chr  NA NA NA NA ...
+##  $ channel             : chr  &quot;BBC2&quot; &quot;BBC2&quot; &quot;BBC2&quot; &quot;BBC2&quot; ...</code></pre>
 <p>The values just after the ":" tells us the type of each variable</p>
 <ul>
-<li><code>num</code> stands for <strong>numeric</strong> variable</li>
-<li><code>Date</code> stands for a type of variable that can handle calendar dates</li>
-<li><code>chr</code> stands for 'character' which usually represents a <strong>categorical</strong> variable</li>
+<li><code>int</code> stands for <strong>integer</strong> which is a <strong>numeric</strong> variable</li>
+<li><code>chr</code> stands for 'character' which usually represents a <strong>categorical</strong> variable
+<!-- - `Date` stands for a type of variable that can handle calendar dates --></li>
 </ul>
-<p>Because numbers (e.g. the values that <code>series</code> takes, i.e. 1, 2, 3, ...) can also represent 'categories' or 'levels' of a categorical variable, R doesn't assume that just because a variable is of type <code>chr</code> that it is categorical. To specify a <strong>categorical</strong> variable in R we use the <code>as.factor()</code> function, since R calls categorical variables "factors". In the <code>ratings</code> data at least the three variable <code>series</code>, <code>episode</code> and <code>channel</code> are categorical variables but they aren't stored as such, yet!</p>
+<p>Because numbers (e.g. the values that <code>series</code> takes, i.e. 1, 2, 3, ...) can also represent 'categories' or 'levels' of a categorical variable, R doesn't assume that just because a variable is of type <code>chr</code> that it is categorical. To specify a <strong>categorical</strong> variable in R we use the <code>as.factor()</code> function, since R calls categorical variables "factors". In the <code>ratings</code> data the three variables <code>series</code>, <code>episode</code> and <code>channel</code> are categorical variables but they aren't stored as such, yet!</p>
 <p>To tell R that variables are factors (i.e. categorical) use <code>mutate()</code> to overriding the original variable with the same data but classified as a factor.</p>
 <ul>
 <li><strong>Copy and run this code to change the <code>series</code>, <code>episode</code> and <code>channel</code> variables to factors.</strong></li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="part-2---analyzing-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
-<span id="cb32-2"><a href="part-2---analyzing-data.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series =</span> <span class="fu">as.factor</span>(series),</span>
-<span id="cb32-3"><a href="part-2---analyzing-data.html#cb32-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">episode =</span> <span class="fu">as.factor</span>(episode),</span>
-<span id="cb32-4"><a href="part-2---analyzing-data.html#cb32-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">channel =</span> <span class="fu">as.factor</span>(channel))</span>
-<span id="cb32-5"><a href="part-2---analyzing-data.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings)</span></code></pre></div>
-<pre><code>## tibble [94 x 12] (S3: tbl_df/tbl/data.frame)
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="part-2---analyzing-data.html#cb33-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="part-2---analyzing-data.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">series =</span> <span class="fu">as.factor</span>(series),</span>
+<span id="cb33-3"><a href="part-2---analyzing-data.html#cb33-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">episode =</span> <span class="fu">as.factor</span>(episode),</span>
+<span id="cb33-4"><a href="part-2---analyzing-data.html#cb33-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">channel =</span> <span class="fu">as.factor</span>(channel))</span>
+<span id="cb33-5"><a href="part-2---analyzing-data.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ratings)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    94 obs. of  12 variables:
 ##  $ series              : Factor w/ 10 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 1 1 2 2 2 2 ...
 ##  $ episode             : Factor w/ 10 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 2 3 4 5 6 1 2 3 4 ...
-##  $ uk_airdate          : Date[1:94], format: &quot;2010-08-17&quot; &quot;2010-08-24&quot; ...
-##  $ viewers_7day        : num [1:94] 2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
-##  $ viewers_28day       : num [1:94] 7 3 2 4 1 1 2 2 1 1 ...
-##  $ network_rank        : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ channels_rank       : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ bbc_iplayer_requests: num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ episode_count       : num [1:94] 1 2 3 4 5 6 7 8 9 10 ...
-##  $ us_season           : num [1:94] NA NA NA NA NA NA NA NA NA NA ...
-##  $ us_airdate          : chr [1:94] NA NA NA NA ...
+##  $ uk_airdate          : chr  &quot;2010-08-17&quot; &quot;2010-08-24&quot; &quot;2010-08-31&quot; &quot;2010-09-07&quot; ...
+##  $ viewers_7day        : num  2.24 3 3 2.6 3.03 2.75 3.1 3.53 3.82 3.6 ...
+##  $ viewers_28day       : num  7 3 2 4 1 1 2 2 1 1 ...
+##  $ network_rank        : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ channels_rank       : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ bbc_iplayer_requests: int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ episode_count       : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ us_season           : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ us_airdate          : chr  NA NA NA NA ...
 ##  $ channel             : Factor w/ 3 levels &quot;BBC1&quot;,&quot;BBC2&quot;,..: 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
 <p>You can read this code as, for example, "overwrite the data that is in the column series with series as a factor, thus converting it to a categorical variable".</p>
 <p><strong>Remember this. It's a really important step and if graphs are looking weird this might be the reason.</strong></p>
@@ -443,15 +455,13 @@ Optional: other ways of looking at data
 <h4><span class="header-section-number">3.3.2.1</span> Numerical Data<a href="part-2---analyzing-data.html#numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>summarise()</code> function from the <code>dplyr</code> package is loaded as part of the <code>tidyverse</code> and creates summary statistics. It creates a new object with columns that summarise the data from a larger table using summary functions. Check this <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Cheat Sheet</a> for various summary functions. Some common ones are: <code>n()</code>, <code>min()</code>, <code>max()</code>, <code>mean()</code>, <code>sd()</code> and <code>quantile()</code>.</p>
 <p>Here is an example using <code>summarise()</code></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="part-2---analyzing-data.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(ratings,</span>
-<span id="cb34-2"><a href="part-2---analyzing-data.html#cb34-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
-<span id="cb34-3"><a href="part-2---analyzing-data.html#cb34-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_ratings =</span> <span class="fu">sd</span>(viewers_7day),</span>
-<span id="cb34-4"><a href="part-2---analyzing-data.html#cb34-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
-<span id="cb34-5"><a href="part-2---analyzing-data.html#cb34-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day))</span></code></pre></div>
-<pre><code>## # A tibble: 1 x 4
-##   mean_ratings sd_ratings min_ratings max_ratings
-##          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-## 1         8.58       3.27        2.24        15.9</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="part-2---analyzing-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(ratings,</span>
+<span id="cb35-2"><a href="part-2---analyzing-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb35-3"><a href="part-2---analyzing-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_ratings =</span> <span class="fu">sd</span>(viewers_7day),</span>
+<span id="cb35-4"><a href="part-2---analyzing-data.html#cb35-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb35-5"><a href="part-2---analyzing-data.html#cb35-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day))</span></code></pre></div>
+<pre><code>##   mean_ratings sd_ratings min_ratings max_ratings
+## 1     8.579606   3.266634        2.24        15.9</code></pre>
 <ul>
 <li>The first argument that <code>summarise()</code> takes is the data object to summarise</li>
 <li><code>summarise()</code> creates a new object. The column names of this new object are on the left hand-side of <code>=</code>, i.e., <code>mean_ratings</code>, <code>sd_ratings</code>, <code>min_ratings</code> and <code>max_ratings</code>.</li>
@@ -486,12 +496,12 @@ Optional: other ways of looking at data
 <li><p>The argument <code>sort = TRUE</code> will sort the table by <code>n</code> in descending order.</p></li>
 <li><p><strong>Run this code and answer the following question:</strong></p></li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="part-2---analyzing-data.html#cb36-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ratings, channel, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="part-2---analyzing-data.html#cb37-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ratings, channel, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <ul>
 <li><p><strong>Which channel screened the most episodes of GBBO from 2010 to 2019?</strong> <select class='webex-select'><option value='blank'></option><option value=''>BBC1</option><option value='answer'>BBC2</option><option value=''>Channel 4</option><option value=''>No single channel</option></select></p></li>
 <li><p><strong>Run this code and answer the following questions:</strong></p></li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="part-2---analyzing-data.html#cb37-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ratings, channel, series)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="part-2---analyzing-data.html#cb38-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ratings, channel, series)</span></code></pre></div>
 <ul>
 <li><strong>What is this summary revealing?</strong></li>
 </ul>
@@ -510,17 +520,17 @@ Optional: other ways of looking at data
 <p>Its seldom that we are interested in just one variable at a time. An example of this is when we want numerical summaries but for each category/group of a categorical variable. The combination of the <code>group_by()</code> and <code>summarise()</code> functions is incredibly powerful for this task (and it is also a good demonstration of why pipes (<code>%&gt;%</code>) are so useful!).</p>
 <p>The function <code>group_by()</code> takes an existing data object and converts it into a grouped object, where any operations that are performed on it are done "by group".</p>
 <p>Consider this code (you are welcome to run it):</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="part-2---analyzing-data.html#cb38-1" aria-hidden="true" tabindex="-1"></a>ratings_grouped <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
-<span id="cb38-2"><a href="part-2---analyzing-data.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel)</span>
-<span id="cb38-3"><a href="part-2---analyzing-data.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="part-2---analyzing-data.html#cb38-4" aria-hidden="true" tabindex="-1"></a>ch_ratings <span class="ot">&lt;-</span> ratings_grouped <span class="sc">%&gt;%</span></span>
-<span id="cb38-5"><a href="part-2---analyzing-data.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb38-6"><a href="part-2---analyzing-data.html#cb38-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
-<span id="cb38-7"><a href="part-2---analyzing-data.html#cb38-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
-<span id="cb38-8"><a href="part-2---analyzing-data.html#cb38-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
-<span id="cb38-9"><a href="part-2---analyzing-data.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb38-10"><a href="part-2---analyzing-data.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-11"><a href="part-2---analyzing-data.html#cb38-11" aria-hidden="true" tabindex="-1"></a>ch_ratings</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="part-2---analyzing-data.html#cb39-1" aria-hidden="true" tabindex="-1"></a>ratings_grouped <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="part-2---analyzing-data.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel)</span>
+<span id="cb39-3"><a href="part-2---analyzing-data.html#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="part-2---analyzing-data.html#cb39-4" aria-hidden="true" tabindex="-1"></a>ch_ratings <span class="ot">&lt;-</span> ratings_grouped <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="part-2---analyzing-data.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb39-6"><a href="part-2---analyzing-data.html#cb39-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb39-7"><a href="part-2---analyzing-data.html#cb39-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb39-8"><a href="part-2---analyzing-data.html#cb39-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb39-9"><a href="part-2---analyzing-data.html#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb39-10"><a href="part-2---analyzing-data.html#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="part-2---analyzing-data.html#cb39-11" aria-hidden="true" tabindex="-1"></a>ch_ratings</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 5
 ##   channel count mean_ratings min_ratings max_ratings
 ##   &lt;fct&gt;   &lt;int&gt;        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
@@ -543,14 +553,14 @@ Optional Extra Info on ungroup()...
 <ul>
 <li><strong>Run this code and check that the object produced is identical to <code>ch_ratings</code> shown above.</strong></li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="part-2---analyzing-data.html#cb40-1" aria-hidden="true" tabindex="-1"></a>ch_ratings <span class="ot">&lt;-</span> </span>
-<span id="cb40-2"><a href="part-2---analyzing-data.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  ratings <span class="sc">%&gt;%</span>             <span class="co"># Start with the original dataset; and then</span></span>
-<span id="cb40-3"><a href="part-2---analyzing-data.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel) <span class="sc">%&gt;%</span>   <span class="co"># group it; and then</span></span>
-<span id="cb40-4"><a href="part-2---analyzing-data.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),  <span class="co"># summarise it by those groups</span></span>
-<span id="cb40-5"><a href="part-2---analyzing-data.html#cb40-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
-<span id="cb40-6"><a href="part-2---analyzing-data.html#cb40-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
-<span id="cb40-7"><a href="part-2---analyzing-data.html#cb40-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
-<span id="cb40-8"><a href="part-2---analyzing-data.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="part-2---analyzing-data.html#cb41-1" aria-hidden="true" tabindex="-1"></a>ch_ratings <span class="ot">&lt;-</span> </span>
+<span id="cb41-2"><a href="part-2---analyzing-data.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  ratings <span class="sc">%&gt;%</span>             <span class="co"># Start with the original dataset; and then</span></span>
+<span id="cb41-3"><a href="part-2---analyzing-data.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel) <span class="sc">%&gt;%</span>   <span class="co"># group it; and then</span></span>
+<span id="cb41-4"><a href="part-2---analyzing-data.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),  <span class="co"># summarise it by those groups</span></span>
+<span id="cb41-5"><a href="part-2---analyzing-data.html#cb41-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb41-6"><a href="part-2---analyzing-data.html#cb41-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb41-7"><a href="part-2---analyzing-data.html#cb41-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb41-8"><a href="part-2---analyzing-data.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
 <p><strong>What would you change to calculate the mean ratings by series instead of by channel?</strong></p>
 <div id="radio_DXIXGUHICN" class="webex-radiogroup">
 <label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value="answer"></input> <span>group_by(series)</span></label><label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value=""></input> <span>summarise(series)</span></label><label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value=""></input> <span>count(series)</span></label><label><input type="radio" autocomplete="off" name="radio_DXIXGUHICN" value=""></input> <span>mean(series)</span></label>
@@ -559,16 +569,16 @@ Optional Extra Info on ungroup()...
 <ul>
 <li><strong>Reverse the order of <code>channel</code> and <code>series</code> in <code>group_by()</code> to see how it changes the output.</strong></li>
 </ul>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="part-2---analyzing-data.html#cb41-1" aria-hidden="true" tabindex="-1"></a>ch_series_ratings <span class="ot">&lt;-</span> </span>
-<span id="cb41-2"><a href="part-2---analyzing-data.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  ratings <span class="sc">%&gt;%</span>             </span>
-<span id="cb41-3"><a href="part-2---analyzing-data.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel, series) <span class="sc">%&gt;%</span>   </span>
-<span id="cb41-4"><a href="part-2---analyzing-data.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb41-5"><a href="part-2---analyzing-data.html#cb41-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
-<span id="cb41-6"><a href="part-2---analyzing-data.html#cb41-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
-<span id="cb41-7"><a href="part-2---analyzing-data.html#cb41-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
-<span id="cb41-8"><a href="part-2---analyzing-data.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb41-9"><a href="part-2---analyzing-data.html#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-10"><a href="part-2---analyzing-data.html#cb41-10" aria-hidden="true" tabindex="-1"></a>ch_series_ratings</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="part-2---analyzing-data.html#cb42-1" aria-hidden="true" tabindex="-1"></a>ch_series_ratings <span class="ot">&lt;-</span> </span>
+<span id="cb42-2"><a href="part-2---analyzing-data.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  ratings <span class="sc">%&gt;%</span>             </span>
+<span id="cb42-3"><a href="part-2---analyzing-data.html#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(channel, series) <span class="sc">%&gt;%</span>   </span>
+<span id="cb42-4"><a href="part-2---analyzing-data.html#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb42-5"><a href="part-2---analyzing-data.html#cb42-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_ratings =</span> <span class="fu">mean</span>(viewers_7day),</span>
+<span id="cb42-6"><a href="part-2---analyzing-data.html#cb42-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_ratings =</span> <span class="fu">min</span>(viewers_7day),</span>
+<span id="cb42-7"><a href="part-2---analyzing-data.html#cb42-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_ratings =</span> <span class="fu">max</span>(viewers_7day)) <span class="sc">%&gt;%</span></span>
+<span id="cb42-8"><a href="part-2---analyzing-data.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb42-9"><a href="part-2---analyzing-data.html#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="part-2---analyzing-data.html#cb42-10" aria-hidden="true" tabindex="-1"></a>ch_series_ratings</span></code></pre></div>
 <pre><code>## # A tibble: 10 x 6
 ##    channel series count mean_ratings min_ratings max_ratings
 ##    &lt;fct&gt;   &lt;fct&gt;  &lt;int&gt;        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
