@@ -91,17 +91,17 @@ You might get some red text when you load a package, this is normal. It is usual
 
 A function is a name that refers to some code you can reuse. We'll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more arguments. These are options that you can set. In the example above, the `data` argument is set to `ggplot2::diamonds`, which refers to a built-in dataset `diamonds` from the `ggplot2` package.
 
-If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a script or R Markdown document in the source pane, it won't run until you run the script, knit the R Markdown file, or run a code chunk. You'll learn more about this in Chapter\ \@ref(reports).
+If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a R script file in the source pane, it won't run until you run the script.
 
 ### Tidyverse
 
 `tidyverse` is a meta-package that loads several packages we'll be using in these labs, including:
 
-- `ggplot2`, for data visualisation (Chapter\ \@ref(viz))
-- `readr`, for data import (Chapter\ \@ref(data))
+- `ggplot2`, for data visualisation 
+- `readr`, for data import 
 <!-- - `tibble`, for tables (Chapter\ \@ref(data)) -->
 <!-- - `tidyr`, for data tidying (Chapter\ \@ref(tidy)) -->
-- `dplyr`, for data manipulation (Chapter\ \@ref(wrangle))
+- `dplyr`, for data manipulation 
 <!-- - `stringr`, for strings -->
 <!-- - `forcats`, for factors -->
 <!-- - `purrr`, for repeating things -->

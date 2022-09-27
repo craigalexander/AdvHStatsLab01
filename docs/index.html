@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ilo-intro"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-r-rstudio"><i class="fa fa-check"></i><b>1.2</b> R and RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio Quickstart Guide</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.4</b> Credit where credit is due</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html"><i class="fa fa-check"></i><b>2</b> Getting started using RStudio</a>
@@ -258,18 +258,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="rstudio_ide" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> RStudio<a href="index.html#rstudio_ide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) . The RStudio IDE is arranged with four window.</p>
+<h2><span class="header-section-number">1.3</span> RStudio Quickstart Guide<a href="index.html#rstudio_ide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use <a href="http://www.rstudio.com" target="_blank">RStudio</a>, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) .</p>
+<p>To open RStudio from the University PCs:</p>
+<ul>
+<li>Open the “Maths-Stats” folder on your desktop.</li>
+<li>Open the “R Studio” programme from this folder.</li>
+</ul>
+<p>To create a text file (called an "R script") to write your R code in select from the menu:</p>
+<ul>
+<li><code>&gt; File &gt; New File &gt; R Script</code></li>
+</ul>
+<p>To save the R script file, go to</p>
+<ul>
+<li><code>&gt; File &gt; Save</code></li>
+</ul>
+<p>A dialogue box will appear asking where (on which drive) you would like to save the code.</p>
+<p>Save this R Script in your M: or K: personal drive (or a USB stick that you’ve brought with you) with a relevant filename, e.g. “S1Y_Lab_1”. <strong>IMPORTANT: do NOT save it to the H: drive.</strong></p>
+<p>Once saved in a <code>.R</code> script file, you can use your code again, so no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to</p>
+<ul>
+<li><code>&gt; File &gt; Open File…</code></li>
+</ul>
+<p>and find the code file from the location where you saved it.</p>
+<p>The RStudio IDE is arranged with four window.</p>
 <div class="figure"><span style="display:block;" id="fig:img-rstudio"></span>
 <img src="images/Opened-RScript.jpg" alt="The RStudio IDE"  />
 <p class="caption">
 Figure 1.1: The RStudio IDE
 </p>
 </div>
-<p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.</p>
+<p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a script file (like we did above) or load in some data. We 'run' (i.e. execute) code in the script file by selecting the row(s) we want to run and then clicking the <code>Run</code> icon OR by holding down the <code>ctrl</code> key and <code>Enter</code> key at the same time. The results of executing the code (if any) appear in the lower left pane.</p>
 <p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.</p>
 <p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The environment tab lists some information about the object that you have defined in your code. We'll learn more about the Help tab in Section <a href="getting-started-using-rstudio.html#function-help">2.1.5</a>.</p>
-<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see Section <a href="getting-started-using-rstudio.html#packages">2.1</a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <strong><code>Preferences &gt; Pane Layout</code></strong>.</p>
+<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages, and the <strong>Viewer</strong> tab to display reports created by your scripts.</p>
+<!-- You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**. -->
 <!-- ### Reproducibility {#intro-reproducibility} -->
 <!-- In this class, you will be learning how to make reproducible reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results. -->
 <!-- When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to create a report every month with the social media analytics for your company, a reproducible report allows you to download a new month's data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable. -->

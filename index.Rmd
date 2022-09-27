@@ -50,9 +50,34 @@ R is a programming language that you will write code in and RStudio is an Integr
 You **DO NOT** need to intall R or RStudio on your own laptop or desktop computer.  You are expected to complete these labs on the universities PCs, and these already have R and RStudio installed.  However, R and (basic) RStudio are free to download and install, so there is a document on the Moodle page with technical details on installing R and RStudio on your computer. If you already had R and/or RStudio installed, we recommend updating to the latest version before you work through this course. 
 </div>
 
-## RStudio {#rstudio_ide}
+## RStudio Quickstart Guide {#rstudio_ide}
 
-The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) .  The RStudio IDE is arranged with four window.
+The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) .  
+
+To open RStudio from the University PCs:
+
+- Open the “Maths-Stats” folder on your desktop.
+- Open the “R Studio” programme from this folder.
+
+To create a text file (called an "R script") to write your R code in select from the menu:
+
+- `> File > New File > R Script`
+
+To save the R script file, go to
+
+- `> File > Save`
+
+A dialogue box will appear asking where (on which drive) you would like to save the code.
+
+Save this R Script in your M: or K: personal drive (or a USB stick that you’ve brought with you) with a relevant filename, e.g. “S1Y_Lab_1”.  **IMPORTANT: do NOT save it to the H: drive.**
+
+Once saved in a `.R` script file, you can use your code again, so no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to
+
+- `> File > Open File…`
+
+and find the code file from the location where you saved it.
+
+The RStudio IDE is arranged with four window.
 
 ```{r img-rstudio, echo=FALSE, fig.cap="The RStudio IDE"}
 #knitr::include_graphics("images/intro/rstudio.png")
@@ -60,13 +85,15 @@ The R software gives the computer the ability to process the R programming langu
 knitr::include_graphics("images/Opened-RScript.jpg")
 ```
 
-By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data - don't worry, we'll get to that soon.
+By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a script file (like we did above) or load in some data.  We 'run' (i.e. execute) code in the script file by selecting the row(s) we want to run and then clicking the  `Run` icon OR by holding down the `ctrl` key and `Enter` key at the same time.  The results of executing the code (if any) appear in the lower left pane.
 
 The lower left pane is the **console pane**, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it.
 
 The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the **Environment** tab and the **Help** tab. The environment tab lists some information about the object that you have defined in your code. We'll learn more about the Help tab in Section\ \@ref(function-help).
 
-In the lower right pane, the most used tabs are the **Files** tab for directory structure, the **Plots** tab for plots made in a script, the **Packages** tab for managing add-on packages (see Section\ \@ref(packages)), and the **Viewer** tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**.
+In the lower right pane, the most used tabs are the **Files** tab for directory structure, the **Plots** tab for plots made in a script, the **Packages** tab for managing add-on packages, and the **Viewer** tab to display reports created by your scripts. 
+
+<!-- You can change the location of panes and what tabs are shown under **`Preferences > Pane Layout`**. -->
 
 <!-- ### Reproducibility {#intro-reproducibility} -->
 

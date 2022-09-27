@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ilo-intro"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-r-rstudio"><i class="fa fa-check"></i><b>1.2</b> R and RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio Quickstart Guide</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.4</b> Credit where credit is due</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html"><i class="fa fa-check"></i><b>2</b> Getting started using RStudio</a>
@@ -293,17 +293,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- If you see the error message: `Error in esquisser(data = ggplot2::diamonds) : could not find function "esquisser"`, that just means that you forgot to load the `esquisse` package using `library(esquisse)`. Either run the code to load the package first, or preface the function with the package name like `esquisse::esquisser()` to use it without loading the package. -->
 <!-- ::: -->
 <p>A function is a name that refers to some code you can reuse. We'll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more arguments. These are options that you can set. In the example above, the <code>data</code> argument is set to <code>ggplot2::diamonds</code>, which refers to a built-in dataset <code>diamonds</code> from the <code>ggplot2</code> package.</p>
-<p>If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a script or R Markdown document in the source pane, it won't run until you run the script, knit the R Markdown file, or run a code chunk. You'll learn more about this in Chapter <a href="#reports"><strong>??</strong></a>.</p>
+<p>If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a R script file in the source pane, it won't run until you run the script.</p>
 </div>
 <div id="tidyverse" class="section level3 hasAnchor" number="2.1.4">
 <h3><span class="header-section-number">2.1.4</span> Tidyverse<a href="getting-started-using-rstudio.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>tidyverse</code> is a meta-package that loads several packages we'll be using in these labs, including:</p>
 <ul>
-<li><code>ggplot2</code>, for data visualisation (Chapter <a href="#viz"><strong>??</strong></a>)</li>
-<li><code>readr</code>, for data import (Chapter <a href="#data"><strong>??</strong></a>)
+<li><code>ggplot2</code>, for data visualisation</li>
+<li><code>readr</code>, for data import
 <!-- - `tibble`, for tables (Chapter\ \@ref(data)) -->
 <!-- - `tidyr`, for data tidying (Chapter\ \@ref(tidy)) --></li>
-<li><code>dplyr</code>, for data manipulation (Chapter <a href="#wrangle"><strong>??</strong></a>)
+<li><code>dplyr</code>, for data manipulation
 <!-- - `stringr`, for strings -->
 <!-- - `forcats`, for factors -->
 <!-- - `purrr`, for repeating things --></li>
