@@ -11,6 +11,7 @@ ilo-intro
 intro-r-rstudio
 intro-installing-r
 rstudio_ide
+skip-ahead-to-section-3-part-2---analyzing-data
 credit-where-credit-is-due
 getting-started-using-rstudio
 packages

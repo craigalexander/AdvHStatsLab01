@@ -123,6 +123,11 @@ In the lower right pane, the most used tabs are the **Files** tab for directory 
 
 <!-- Try doing each of these now. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item.  -->
 
+
+## Skip ahead to Section 3 "Part 2 - Analyzing Data"
+
+The next section (2 "Getting started using RStudio") is for reference for you to look at in your own time.  In the lab, please go straight to Section 3 "Part 2 - Analyzing Data" and continue working from there.
+
 ## Credit where credit is due
 
 This introductory lab incorporates and adapts materials from:
