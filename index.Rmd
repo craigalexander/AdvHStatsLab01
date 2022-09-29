@@ -56,7 +56,7 @@ The R software gives the computer the ability to process the R programming langu
 
 To open RStudio from the University PCs:
 
-- Open the “Maths-Stats” folder on your desktop.
+- Open the “Maths-Stats” folder on the desktop.
 - Open the “R Studio” programme from this folder.
 
 To create a text file (called an "R script") to write your R code in select from the menu:
@@ -69,9 +69,9 @@ To save the R script file, go to
 
 A dialogue box will appear asking where (on which drive) you would like to save the code.
 
-Save this R Script in your M: or K: personal drive (or a USB stick that you’ve brought with you) with a relevant filename, e.g. “S1Y_Lab_1”.  **IMPORTANT: do NOT save it to the H: drive.**
+Save this R script file by navigating to a drive letter (e.g. H: or M:) or to a USB stick that you've brought with you and save it with a relevant filename, e.g. "S1Y_Lab_1". **IMPORTANT: DO NOT navigate to ANY folders like "Documents" or "Desktop".**
 
-Once saved in a `.R` script file, you can use your code again, so no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to
+Once saved in a `.R` script file, you can use your code again, so theres's no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to
 
 - `> File > Open File…`
 
