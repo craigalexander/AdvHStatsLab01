@@ -10,6 +10,7 @@ part-1-intro-to-r-and-rstudio-the-r-logo-the-rstudio-logo
 ilo-intro
 intro-r-rstudio
 intro-installing-r
+optional-accessing-rrstudio-virtually
 rstudio_ide
 skip-ahead-to-section-3-part-2---analyzing-data
 credit-where-credit-is-due
