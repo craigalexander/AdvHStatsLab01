@@ -193,21 +193,26 @@ library(tidyverse)
 
 ### Creating a new variable and adding it to a data object
 
-Not all the information we need is necessarily included in the data.  For example, in the introduction to the GBBO data we were told the "first four series [were] broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.".  We can add this information to the `ratings` data as another variable/column in the `ratings` data.
+Not all the information we need is necessarily included in the data.  For example, the `viewers_7day` variable is measured as millions of viewers, but what if we wanted it to be in raw numbers (i.e. 15000000 instead of 1.5)?  Also, in the introduction to the GBBO data we were told the "first four series [were] broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.".  We can add this information to the `ratings` data as another variable/column in the `ratings` data.
 
-- **Run this code to create a new variable `channel` in the `ratings` data and to check that it as we intended:**
+- **Run this code to create a new variables `viewers_7day_raw` and `channel` in the `ratings` data and print it to check that it as we intended:**
 
 ```{r, echo = FALSE}
-ratings <- mutate(ratings, channel = case_when(series < 5 ~ "BBC2",
+ratings <- mutate(ratings, 
+                  viewers_7day_raw = viewers_7day * 1000000,
+                  channel = case_when(series < 5 ~ "BBC2",
                                                 series > 4 & series <8 ~ "BBC1",
                                                 series > 7 ~ "C4"))
 ```
 
 ```{r, eval = FALSE}
-ratings <- mutate(ratings, channel = case_when(series < 5 ~ "BBC2",
+ratings <- mutate(ratings, 
+                  viewers_7day_raw = viewers_7day * 1000000,
+                  channel = case_when(series < 5 ~ "BBC2",
                                                 series > 4 & series <8 ~ "BBC1",
                                                 series > 7 ~ "C4"))
 
+ratings$viewers_7day_raw
 select(ratings, series, channel)
 ```
 

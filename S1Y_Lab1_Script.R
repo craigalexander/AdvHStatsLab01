@@ -20,6 +20,17 @@ library(tidyverse)
 select(ratings, series, channel)
 
 # 3.3.1 Creating a new variable and adding it to a data object
+
+ratings <- mutate(ratings,
+                  viewers_7day_raw = viewers_7day * 1000000,
+                  channel = case_when(series < 5 ~ "BBC2",
+                                      series > 4 & series <8 ~ "BBC1",
+                                      series > 7 ~ "C4"))
+
+ratings$viewers_7day_raw
+select(ratings, series, channel)
+
+
 ratings <- ratings %>%
   mutate(series = as.factor(series),
          episode = as.factor(episode),
