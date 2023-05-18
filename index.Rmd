@@ -1,5 +1,5 @@
 ---
-title: "S1Y Lab 1"
+title: "Statistics Tutorial"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -44,34 +44,12 @@ set.seed(12042016)
 
 R is a programming language that you will write code in and RStudio is an Integrated Development Environment (IDE) which makes working in R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without RStudio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 
-<div id="hello" class="greeting message" style="color: grey;">
-### OPTIONAL: Installing R and RStudio on your device {#intro-installing-r}
-
-You **DO NOT** need to intall R or RStudio on your own laptop or desktop computer.  You are expected to complete these labs on the universities PCs, and these already have R and RStudio installed.  However, R and (basic) RStudio are free to download and install, so there is a document on the Moodle page with some technical details on installing R and RStudio on your computer. If you already have R and/or RStudio installed, we recommend updating to the latest version before you work through this course. 
-
-### OPTIONAL: Accessing **R**/**RStudio** virtually
-
-There is also the option of accessing RStudio running on the University servers via the Windows Virtual Desktop (WVD).
-
-[GLASGOW ANYWHERE DESKTOP](https://www.gla.ac.uk/myglasgow/anywhere/desktop/) has a link to [this page](https://rdweb.wvd.microsoft.com/arm/webclient/index.html) where you can log in via the College of Science and Engineering’s **CoSE Desktop** link (**DON'T** use the Mathematics and Statistics link).  This will log you in to a remote desktop which appears on your screen as if you were in a physical computer lab on campus.  
-
-To run **RStudio**, all you need to do is search for **RStudio** in the search box in the bottom left of the screen and click on the **RStudio** icon and it will open.  If Rstudio displays "an update is available" message on startup, click **ignore update**.
-
-To download the data for the labs from the S1Y Moodle page, open an internet browser (e.g. Chrome) from within the WVD, login to Moodle via the University website and download the .csv file from the S1Y Moodle page.   
-
-We suggest you save the .csv data files and store your R script files in the same folder on the "OneDrive - University of Glasgow" area since you'll also have access to this area from outside the WVD. 
-</div>
 
 ## RStudio Quickstart Guide {#rstudio_ide}
 
 The R software gives the computer the ability to process the R programming language. We will never use that software directly. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}, an integrated development environment (IDE) which runs R for us via a graphical user interface (GUI) .  
 
-To open RStudio from the University PCs:
-
-- Open the “Maths-Stats” folder on the desktop.
-- Open the “R Studio” programme from this folder.
-
-To create a text file (called an "R script") to write your R code in select from the menu:
+Once you have opened RStudio, to create a text file (called an "R script") to write your R code in select from the menu:
 
 - `> File > New File > R Script`
 
@@ -81,9 +59,9 @@ To save the R script file, go to
 
 A dialogue box will appear asking where (on which drive) you would like to save the code.
 
-Save this R script file by navigating to a drive letter (e.g. H: or M:) or to a USB stick that you've brought with you and save it with a relevant filename, e.g. "S1Y_Lab_1". **IMPORTANT: DO NOT navigate to ANY folders like "Documents" or "Desktop".**
+Save this R script file with a relevant filename, e.g. "Statistics_Tutorial". 
 
-Once saved in a `.R` script file, you can use your code again, so theres's no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to
+Once saved in a `.R` script file, you can use your code again, so there's no need to type it in a second time. If you close RStudio and then open it again you can read in your code by going to
 
 - `> File > Open File…`
 
@@ -135,10 +113,6 @@ In the lower right pane, the most used tabs are the **Files** tab for directory 
 
 <!-- Try doing each of these now. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item.  -->
 
-
-## Skip ahead to Section 3 "Part 2 - Analyzing Data"
-
-The next section (2 "Getting started using RStudio") is for reference for you to look at in your own time.  In the lab, please go straight to Section 3 "Part 2 - Analyzing Data" and continue working from there.
 
 ## Credit where credit is due
 

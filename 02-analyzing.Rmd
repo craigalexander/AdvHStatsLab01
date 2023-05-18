@@ -26,27 +26,11 @@ The data set we will be looking at in this section refers to TV competition ["Gr
 
 ### Reading data in
 
-The text file `ratings_seasons.csv` contains data on the first 10 series (2010-2019) of GBBO.   The file is on the Moodle page after the link to this lab.  When you click on it, it will download automatically to a local folder, probably the `Downloads` folder.  Find where it is saved (e.g. use the `Show in folder` option when you click on the options next to the filename at the bottom of your browser) and move it to the **same folder** as you saved the script file `S1Y_Lab_1.R` at the start of the lab.  
+The text file `ratings_seasons.csv` contains data on the first 10 series (2010-2019) of GBBO which can be imported using the following code.
 
-You will need to tell RStudio where (in what directory on your computer) to find the data set. To do this select
-
-`> Session > Set Working Directory > Choose Directory…`
-
-and specify the location where you've saved the data file.
-
-`r hide("Optional: other ways of locating data")`
-
-If you are working in a script file that is saved in the same folder as your data file(s) you can tell RStudio to find the data set in the same directory by selecting
-
-`> Session > Set Working Directory > To source file location`
-`r unhide()`
-
-Then open/go to the `S1Y_Lab_1.R` script file in RStudio and paste and run this code to read the data in the file `ratings_seasons.csv` into the object `ratings` in RStudio.
-
-```{r data, eval = FALSE, warning=FALSE, message=FALSE}
-ratings <- read.csv('ratings_seasons.csv')
+```{r import-data-optional, echo=TRUE, warnings=FALSE, message=FALSE}
+ratings <- read.csv(url("https://raw.githubusercontent.com/craigalexander/AdvHStatsLab2/main/ratings_seasons.csv"))
 ```
-
 
 ### Looking at data
 
@@ -119,7 +103,7 @@ By using any of the methods described above, answer these questions:
 - **How many variables does the data `ratings` contain? `r fitb(dim(ratings)[2])`**
 - **How many observations does `ratings` contain? `r fitb(dim(ratings)[1])`**
 
-In this lab we are interested in the ratings of each episode in the 7 day period after its broadcast.
+In this tutorial we are interested in the ratings of each episode in the 7 day period after its broadcast.
 
 **What variable contains this information?**
 
@@ -139,7 +123,7 @@ opts_var <- c(
 
 ### Exploring data
 
-The variables we will analyse in this lab are:
+The variables we will analyse in this tutorial are:
 
 -   `series`: the series number, ranging from 1 to 10 corresponding to 2010-2019.
 

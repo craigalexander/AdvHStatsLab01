@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Part 2 - Analyzing Data | S1Y Lab 1</title>
-  <meta name="description" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <title>3 Part 2 - Analyzing Data | Statistics Tutorial</title>
+  <meta name="description" content="3 Part 2 - Analyzing Data | Statistics Tutorial" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
+  <meta property="og:title" content="3 Part 2 - Analyzing Data | Statistics Tutorial" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Part 2 - Analyzing Data | S1Y Lab 1" />
+  <meta name="twitter:title" content="3 Part 2 - Analyzing Data | Statistics Tutorial" />
   
   
   
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -137,8 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ilo-intro"><i class="fa fa-check"></i><b>1.1</b> Intended Learning Outcomes</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-r-rstudio"><i class="fa fa-check"></i><b>1.2</b> R and RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudio_ide"><i class="fa fa-check"></i><b>1.3</b> RStudio Quickstart Guide</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#skip-ahead-to-section-3-part-2---analyzing-data"><i class="fa fa-check"></i><b>1.4</b> Skip ahead to Section 3 "Part 2 - Analyzing Data"</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.5</b> Credit where credit is due</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#credit-where-credit-is-due"><i class="fa fa-check"></i><b>1.4</b> Credit where credit is due</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started-using-rstudio.html"><a href="getting-started-using-rstudio.html"><i class="fa fa-check"></i><b>2</b> Getting started using RStudio</a>
 <ul>
@@ -209,9 +208,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="visualizing-data.html"><a href="visualizing-data.html#two-continuous-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>4.6</b> Two continuous variables and a categorical variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="group-tasks.html"><a href="group-tasks.html"><i class="fa fa-check"></i><b>5</b> Group Tasks</a>
+<li class="chapter" data-level="5" data-path="extra-tasks.html"><a href="extra-tasks.html"><i class="fa fa-check"></i><b>5</b> Extra Tasks</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="group-tasks.html"><a href="group-tasks.html#bfrss-survey-questions"><i class="fa fa-check"></i><b>5.1</b> BFRSS Survey Questions</a></li>
+<li class="chapter" data-level="5.1" data-path="extra-tasks.html"><a href="extra-tasks.html#bfrss-survey-questions"><i class="fa fa-check"></i><b>5.1</b> BFRSS Survey Questions</a></li>
 </ul></li>
 </ul>
 
@@ -222,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S1Y Lab 1</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Tutorial</a>
           </h1>
         </div>
 
@@ -251,19 +250,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The data set we will be looking at in this section refers to TV competition <a href="https://en.wikipedia.org/wiki/The_Great_British_Bake_Off">"Great British Bake Off"</a> (often abbreviated to "Bake Off" or "GBBO"). Within each series, a group of amateur bakers compete against each other in a series of episodes, attempting to impress a group of judges with their baking skills. One contestant is eliminated in each episode, and the winner is selected from the contestants who reach the final. The first episode was aired on 17 August 2010, with its first four series broadcast on BBC Two, after which it moved to BBC One for the next three series. After its seventh series, it moved to Channel 4.</p>
 <div id="reading-data-in" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Reading data in<a href="part-2---analyzing-data.html#reading-data-in" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The text file <code>ratings_seasons.csv</code> contains data on the first 10 series (2010-2019) of GBBO. The file is on the Moodle page after the link to this lab. When you click on it, it will download automatically to a local folder, probably the <code>Downloads</code> folder. Find where it is saved (e.g. use the <code>Show in folder</code> option when you click on the options next to the filename at the bottom of your browser) and move it to the <strong>same folder</strong> as you saved the script file <code>S1Y_Lab_1.R</code> at the start of the lab.</p>
-<p>You will need to tell RStudio where (in what directory on your computer) to find the data set. To do this select</p>
-<p><code>&gt; Session &gt; Set Working Directory &gt; Choose Directory…</code></p>
-<p>and specify the location where you've saved the data file.</p>
-<div class="webex-solution">
-<button>
-Optional: other ways of locating data
-</button>
-<p>If you are working in a script file that is saved in the same folder as your data file(s) you can tell RStudio to find the data set in the same directory by selecting</p>
-<p><code>&gt; Session &gt; Set Working Directory &gt; To source file location</code></p>
-</div>
-<p>Then open/go to the <code>S1Y_Lab_1.R</code> script file in RStudio and paste and run this code to read the data in the file <code>ratings_seasons.csv</code> into the object <code>ratings</code> in RStudio.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-2---analyzing-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;ratings_seasons.csv&#39;</span>)</span></code></pre></div>
+<p>The text file <code>ratings_seasons.csv</code> contains data on the first 10 series (2010-2019) of GBBO which can be imported using the following code.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-2---analyzing-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">&quot;https://raw.githubusercontent.com/craigalexander/AdvHStatsLab2/main/ratings_seasons.csv&quot;</span>))</span></code></pre></div>
 </div>
 <div id="looking-at-data" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Looking at data<a href="part-2---analyzing-data.html#looking-at-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -347,7 +335,7 @@ Optional: other ways of looking at data
 <li><strong>How many variables does the data <code>ratings</code> contain? <input class='webex-solveme nospaces' size='2' data-answer='["11"]'/></strong></li>
 <li><strong>How many observations does <code>ratings</code> contain? <input class='webex-solveme nospaces' size='2' data-answer='["94"]'/></strong></li>
 </ul>
-<p>In this lab we are interested in the ratings of each episode in the 7 day period after its broadcast.</p>
+<p>In this tutorial we are interested in the ratings of each episode in the 7 day period after its broadcast.</p>
 <p><strong>What variable contains this information?</strong></p>
 <div id="radio_SINWWUNQDM" class="webex-radiogroup">
 <label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>ratings</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>series</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>episode</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value="answer"></input> <span>viewers_7day</span></label><label><input type="radio" autocomplete="off" name="radio_SINWWUNQDM" value=""></input> <span>viewers_28day</span></label>
@@ -355,7 +343,7 @@ Optional: other ways of looking at data
 </div>
 <div id="exploring-data" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Exploring data<a href="part-2---analyzing-data.html#exploring-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The variables we will analyse in this lab are:</p>
+<p>The variables we will analyse in this tutorial are:</p>
 <ul>
 <li><p><code>series</code>: the series number, ranging from 1 to 10 corresponding to 2010-2019.</p></li>
 <li><p><code>episode</code>: the episode number, randing from 1 to 10 (although not all series had 10 episodes!)</p></li>

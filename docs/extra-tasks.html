@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Group Tasks | Statistics Tutorial</title>
-  <meta name="description" content="5 Group Tasks | Statistics Tutorial" />
+  <title>5 Extra Tasks | Statistics Tutorial</title>
+  <meta name="description" content="5 Extra Tasks | Statistics Tutorial" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Group Tasks | Statistics Tutorial" />
+  <meta property="og:title" content="5 Extra Tasks | Statistics Tutorial" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Group Tasks | Statistics Tutorial" />
+  <meta name="twitter:title" content="5 Extra Tasks | Statistics Tutorial" />
   
   
   
@@ -208,9 +208,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="visualizing-data.html"><a href="visualizing-data.html#two-continuous-variables-and-a-categorical-variable"><i class="fa fa-check"></i><b>4.6</b> Two continuous variables and a categorical variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="group-tasks.html"><a href="group-tasks.html"><i class="fa fa-check"></i><b>5</b> Group Tasks</a>
+<li class="chapter" data-level="5" data-path="extra-tasks.html"><a href="extra-tasks.html"><i class="fa fa-check"></i><b>5</b> Extra Tasks</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="group-tasks.html"><a href="group-tasks.html#bfrss-survey-questions"><i class="fa fa-check"></i><b>5.1</b> BFRSS Survey Questions</a></li>
+<li class="chapter" data-level="5.1" data-path="extra-tasks.html"><a href="extra-tasks.html#bfrss-survey-questions"><i class="fa fa-check"></i><b>5.1</b> BFRSS Survey Questions</a></li>
 </ul></li>
 </ul>
 
@@ -229,15 +229,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="group-tasks" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Group Tasks<a href="group-tasks.html#group-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="extra-tasks" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Extra Tasks<a href="extra-tasks.html#extra-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="bfrss-survey-questions" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> BFRSS Survey Questions<a href="group-tasks.html#bfrss-survey-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">5.1</span> BFRSS Survey Questions<a href="extra-tasks.html#bfrss-survey-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey of 350,000 people in the United States. As its name implies, the BRFSS is designed to identify risk factors in the adult population and report emerging health trends. For example, respondents are asked about their diet and weekly physical activity, their HIV/AIDS status, possible tobacco use, and even their level of healthcare coverage. The <a href="http://www.cdc.gov/brfss">BRFSS Web site</a> contains a complete description of the survey, including the research questions that motivate the study and many interesting results derived from the data.</p>
 <p>You will focus on a random sample of 20,000 people from the BRFSS survey conducted in 2000. While there are over 200 variables in this data set, you will work with a small subset.</p>
 <p>Load the data set of 20,000 observations into the object <code>cdc</code> and look at what it contains by running the following code. It may take a couple of minutes for the data to load, depending on your internet connection, so be patient!</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="group-tasks.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)</span>
-<span id="cb70-2"><a href="group-tasks.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cdc)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="extra-tasks.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/cdc.R&quot;</span>)</span>
+<span id="cb70-2"><a href="extra-tasks.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cdc)</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Make a scatterplot of weight (in pounds) versus desired weight (in pounds). Describe the relationship between these two variables. It may be helpful to add the command <code>+  geom_abline()</code> onto the end of your plot code, which adds in the y = x line.</p></li>
 <li><p>Let's consider a new variable: the difference between desired weight (<code>wtdesire</code>) and current weight (<code>weight</code>). Create this new variable by subtracting the two columns in the data frame and assigning them to a new object called <code>wdiff</code>.</p></li>
